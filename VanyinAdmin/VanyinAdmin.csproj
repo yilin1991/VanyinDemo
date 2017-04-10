@@ -71,20 +71,6 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Vanyin.BLL\Vanyin.BLL.csproj">
-      <Project>{fb95183a-d488-462c-b81d-70eb329e4bb6}</Project>
-      <Name>Vanyin.BLL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Vanyin.Common\Vanyin.Common.csproj">
-      <Project>{a1b06be5-98c1-4727-a0a5-1bc958654afa}</Project>
-      <Name>Vanyin.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Vanyin.Model\Vanyin.Model.csproj">
-      <Project>{81b8692b-dff1-402c-b3f0-fe238dd1f9f9}</Project>
-      <Name>Vanyin.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
