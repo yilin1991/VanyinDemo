@@ -1,0 +1,109 @@
+html,body{background-color: #ebebeb;}
+.print{width: 100%;display: table;}
+.print .printtop{width: 100%; height: 55px;background-color: #FFFFFF;display: flex;justify-content: center;align-items: center;}
+.print .printtop img{display: block;height: 25px;}
+.print .printtop p{color: #17b4bb;font-size: 1.3em;padding-left: 10px;}
+
+
+.print .printtop p.designtopp{color: #e93052;}
+
+.input_group{display: flex;height: 45px;width: 90vw;margin-left: 5vw;border: solid 1px #b3b3b3;border-radius: 5px;overflow: hidden;margin-top: 20px;background-color: #FFFFFF;}
+.input_group label.input_lable{width: 25vw;height: 100%;line-height: 45px;display: block;font-size: 1em;border-right: solid 1px #b3b3b3;text-align: center;background-color: #f4f4f4;color: #343535;}
+.input_group select{width: 62vw;appearance: none;-webkit-appearance: none;border: none;border-radius: 0;font-size: 0.95em;padding: 0 25px 0 3vw;background-color: #FFFFFF;-moz-appearance: none; background:url(../img/print/arrow.png) no-repeat scroll right center transparent;background-size: 15px auto;color: #9f9f9f;}
+select::-ms-expand { display: none; }
+.input_group .inputtext{width: 58vw;height: 100%;appearance: none;-webkit-appearance: none;-moz-appearance: none;border: none;padding: 0 3vw 0 3vw;font-size: 0.95em;line-height: 1.5;color: #9f9f9f;}
+.input_group .input_span{width: 100%; height: 45px;background-color: #f4f4f4;}
+.input_group .input_span .input_lable{border-right:none ;}
+.input_remark{flex-direction: column ;height: 180px;}
+.input_remark .inputremark{width: 100%; height: 140px;padding: 10px 15px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;line-height:1.5;font-size: 0.9em;color: #9f9f9f;appearance: none;-webkit-appearance: none;-moz-appearance: none;border-radius: 0;border: none;background-color: #FFFFFF;}
+
+
+.print .contact{width: 100%;background-color: #f4f4f4;border-top: solid 1px #b3b3b3;border-bottom: solid 1px #B3B3B3;margin-top: 20px;}
+
+.print .contact .contactform{width: 100%;height: 55px;border-bottom: solid 1px #dedede;}
+.print .contact .contactform:last-child{border-bottom: none;}
+
+.print .contact .contactform span{display: block;float: left;}
+.print .contact .contactform span:nth-child(1){height: 21px;width: 21px;margin-top: 15px;margin-left: 22px;}
+.print .contact .contactform span:nth-child(1) img{display: block; width: 100%;height: 100%;}
+.print .contact .contactform span:nth-child(2){height: 25px;width: 1px;margin: 15px 10px; background-color: #e1e1e1;}
+
+.print .contact .contactform input{width: 75vw;height: 55px;appearance: none;-webkit-appearance: none;-moz-appearance: none;border: none;background: transparent;font-size: 1em;line-height: 1.2em;}
+
+
+.printbtn{width: 100%;height: 50px;position: fixed;bottom: 0;left: 0;}
+.printbtn .btnprint{width: 100%;height: 100%;appearance: none;-webkit-appearance: none;-moz-appearance: none;background-color: #e93052;border:none;border-radius: 0;color: #FFFFFF;font-size: 1.2em;}
+
+
+.input_group.designdemo{background-color: #f4f4f4;}
+.input_group.designdemo a{display: block;width: 100%;height: 100%;}
+
+.input_group.designdemo a span{display: block;height: 100%;line-height: 45px;}
+.input_group.designdemo a span:nth-child(1){float: left;margin-left: 25px;}
+.input_group.designdemo a span:nth-child(2){float: right;width: 12px;margin-right: 20px;background: url(../img/ico/demobtnico.png) no-repeat center center;background-size: 100% auto;}
+
+
+.printdemand{width: 100%;height: 50px;background-color: #f4f4f4;border-top: solid 1px #b3b3b3;border-bottom: solid 1px #B3B3B3;margin-top: 20px;}
+
+.printdemand .demandtext{float: left;line-height: 50px;}
+
+.printdemand .demandtext p{padding-left: 25px;color: #3333;}
+
+.printdemand .demandbtn{float: right;height: 100%;margin-right: 20px;}
+
+.tgl {
+  display: none;
+}
+.tgl, .tgl:after, .tgl:before, .tgl *, .tgl *:after, .tgl *:before, .tgl + .tgl-btn {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.tgl::-moz-selection, .tgl:after::-moz-selection, .tgl:before::-moz-selection, .tgl *::-moz-selection, .tgl *:after::-moz-selection, .tgl *:before::-moz-selection, .tgl + .tgl-btn::-moz-selection {
+  background: none;
+}
+.tgl::selection, .tgl:after::selection, .tgl:before::selection, .tgl *::selection, .tgl *:after::selection, .tgl *:before::selection, .tgl + .tgl-btn::selection {
+  background: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width:54px;
+  height: 30px;
+  position: relative;
+  cursor: pointer;
+  margin-top: 10px;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-light + .tgl-btn {
+  background: #e93052;
+ /* border-radius: 2em;*/
+  padding: 4px;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+.tgl-light + .tgl-btn:after {
+  /*border-radius: 50%;*/
+  background: #fff;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+  background: #17b4bb;
+}

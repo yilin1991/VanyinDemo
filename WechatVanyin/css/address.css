@@ -1,0 +1,31 @@
+body{background-color: #f9f9f9;}
+
+.address{width:100%;display: table;}
+
+.address > p{font-size: 1.4em;color: #2f2f2f;text-align: center;line-height: 3;}
+
+.addresslist{width: 100%;display: table;border-top: solid 1px #b3b3b3;background-color: #FFFFFF;margin-bottom: 20px;}
+
+.addresslist .addressremark{width: 100%;display: table; box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;
+padding: 15px;margin-bottom: 0;border-bottom: solid 1px #dedede;
+}
+
+.addresslist .addressremark li{width: 100%;display: table;font-size: 0.9em;line-height: 1.5em;color: #4b4b4b;}
+
+.addresslist .addressremark li:nth-child(1) span{display: block;float: left;}
+.addresslist .addressremark li:nth-child(1) span:nth-child(2){float: right;}
+
+.addresslist .addressremark li:nth-child(2){margin-top: 8px;}
+.addresslist .addressremark li:nth-child(2) p{text-align: justify;}
+
+.addresslist .addressedit {width: 100%;display: table;}
+
+.addresslist .addressedit a{display: block;float: right;padding: 10px 15px;color: #2f2f2f;margin: 5px 0;}
+
+.addresslist .addressedit a:first-child{margin-right: 5px;}
+
+a.addaddress{display: block;width: 100%; position: fixed;bottom: 0;height: 60px;background-color: #e93052;text-align: center;line-height: 60px;color: #FFFFFF;font-size: 1.3em;}
+
+
+
+

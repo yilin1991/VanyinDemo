@@ -1,0 +1,41 @@
+
+/******************Home******************/
+body{padding-bottom: 60px;}
+.perhome{width: 100%;display: table;}
+.perhome .perhometop {width: 100%;display: table;}
+.perhome .perhometop img{width: 100%;display: block;}
+.perhome .perhomeheader {width: 100%;display: table;}
+.perhome .perhomeheader a{display: block; width: 30vw;height: 30vw;margin: -15vw auto 0 auto;border-radius: 50%;overflow: hidden;}
+.perhome .perhomeheader a img{display: block;width: 100%;}
+.perhome .perhomeheader p{text-align: center;line-height: 40px;color: #565656;font-size: 1.3em;margin-top: 5px;}
+.perhomelink{width: 100%; background-color: #f4f4f4;display: table;border-top: solid 1px #b3b3b3;border-bottom: solid 1px #b3b3b3;margin-top: 20px;}
+.perhomelink a{display: block;width: 100%;height: 55px;line-height: 55px;border-bottom: solid 1px #dedede;}
+.perhomelink a:last-child{border-bottom: none;}
+.perhomelink a span{display: block;float: left;}
+.perhomelink a span:last-child{float: right;}
+.perhomelink a span.linkico{width: 19px;height: 19px;margin-top:16px;margin-left:15px;text-align: center;line-height: 30px;}
+.perhomelink a span.linkico img{display: inline-block;max-width: 100%;max-height: 100%;}
+.perhomelink a span.linkname{font-size: 1.0em;margin-left: 7px;color: #242424;}
+.perhomelink a span.linknum{font-size: 0.8em;margin-left: 10px;color: #c0c0c0;}
+.perhomelink a span.linkright{height: 15px;margin-top: 20px;margin-right: 15px;}
+.perhomelink a span.linkright img{display: block;height: 100%;}
+.perhometel{width: 100%;display: inline-flex;display: -webkit-inline-flex;align-items: center;justify-content: center;height: 50px;font-size: 1.2em;color: #e93052;margin-top: 10px;}
+.perhometel img{display: block;height: 20px;padding: 0 10px;}
+.perhometel a{display: block;color: #e93052;}
+
+
+
+/**************个人资料******************/
+
+.datum{background-color: #f4f4f4;}
+
+.datumbox{width: 100%;display: table;border-top: solid 1px #b3b3b3;margin-top: 15px;background-color: #f4f4f4;border-bottom: solid 1px #B3B3B3;}
+.datumbox .datumlist{width: 100%;height: 55px;line-height: 55px;border-bottom: solid 1px #DEDEDE;padding: 0 20px;box-sizing: border-box;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;background-color: #FFFFFF;}
+
+.datumbox .datumlist:last-child{border:none;}
+
+.datumbox .datumlist span{display: block;float: left;font-size: 1em;}
+.datumbox .datumlist span:nth-child(1){color: #242424;}
+.datumbox .datumlist span:nth-child(2){float: right;color: #9d9d9d;height: 100%;}
+
+.datumbox .datumlist span:nth-child(2) img{display: block;height: 15px;margin-top: 20px;}

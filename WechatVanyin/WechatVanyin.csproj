@@ -58,6 +58,78 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="address.html" />
+    <Content Include="css\address.css" />
+    <Content Include="css\designtemplate.css" />
+    <Content Include="css\index.css" />
+    <Content Include="css\integral.css" />
+    <Content Include="css\login.css" />
+    <Content Include="css\opinion.css" />
+    <Content Include="css\order.css" />
+    <Content Include="css\personal.css" />
+    <Content Include="css\print.css" />
+    <Content Include="css\style.css" />
+    <Content Include="design-template.html" />
+    <Content Include="design.html" />
+    <Content Include="img\design\closeshowtemplate.png" />
+    <Content Include="img\design\collectico.png" />
+    <Content Include="img\design\designtemimg.png" />
+    <Content Include="img\design\selecttemplateico.png" />
+    <Content Include="img\footer\footerico1.png" />
+    <Content Include="img\footer\footerico2.png" />
+    <Content Include="img\footer\footerico3.png" />
+    <Content Include="img\footer\footerico4.png" />
+    <Content Include="img\header\backico.png" />
+    <Content Include="img\ico\demobtnico.png" />
+    <Content Include="img\ico\emailico.png" />
+    <Content Include="img\ico\nameico.png" />
+    <Content Include="img\ico\selectico1.png" />
+    <Content Include="img\ico\telico.png" />
+    <Content Include="img\index\bzico.png" />
+    <Content Include="img\index\craftsimg1.jpg" />
+    <Content Include="img\index\craftsimg2.jpg" />
+    <Content Include="img\index\designico.png" />
+    <Content Include="img\index\designimg1.png" />
+    <Content Include="img\index\hbico.png" />
+    <Content Include="img\index\hcico.png" />
+    <Content Include="img\index\indexbanner.jpg" />
+    <Content Include="img\index\index_banner.jpg" />
+    <Content Include="img\index\mpico.png" />
+    <Content Include="img\index\printico.png" />
+    <Content Include="img\index\stdico.png" />
+    <Content Include="img\index\stencilimg.jpg" />
+    <Content Include="img\index\technologyimg1.jpg" />
+    <Content Include="img\index\tlico.png" />
+    <Content Include="img\index\ylbico.png" />
+    <Content Include="img\index\zbico.png" />
+    <Content Include="img\index\zyico.png" />
+    <Content Include="img\integral\home\addressmore.png" />
+    <Content Include="img\integral\home\addresstelico.png" />
+    <Content Include="img\integral\home\headerimg.jpg" />
+    <Content Include="img\integral\home\integralshopimg.png" />
+    <Content Include="img\integral\home\topimg.jpg" />
+    <Content Include="img\login\phoneico.png" />
+    <Content Include="img\login\pwdico.png" />
+    <Content Include="img\personal\home\headerimg.jpg" />
+    <Content Include="img\personal\home\homeico1.png" />
+    <Content Include="img\personal\home\homeico2.png" />
+    <Content Include="img\personal\home\homeico3.png" />
+    <Content Include="img\personal\home\homeico4.png" />
+    <Content Include="img\personal\home\homerightico.png" />
+    <Content Include="img\personal\home\hometelico.png" />
+    <Content Include="img\personal\home\topimg.jpg" />
+    <Content Include="img\print\arrow.png" />
+    <Content Include="index.html" />
+    <Content Include="integral-detailed.html" />
+    <Content Include="integral-home.html" />
+    <Content Include="integral-order.html" />
+    <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="Login.html" />
+    <Content Include="opinion.html" />
+    <Content Include="order-list.html" />
+    <Content Include="personal-datum.html" />
+    <Content Include="personal-home.html" />
+    <Content Include="print.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -70,6 +142,9 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="img\order\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
