@@ -5,7 +5,8 @@
 <head>
     <meta charset="utf-8" />
     <title>领意文化管理系统平台</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/login.css" />
+    
 </head>
 <body id="loginBody">
     <form runat="server" id="myForm">
@@ -19,9 +20,9 @@
             </div>
             <div class="loginHeaderRight">
                 <ul>
-                    <li><a href="#">回首页</a></li>
-                    <li><a href="#">帮助</a></li>
-                    <li><a href="#">关于</a></li>
+                    <li><a href="index.aspx">回首页</a></li>
+                    <li><a href="help.aspx">帮助</a></li>
+                    <li><a href="about.aspx">关于</a></li>
                 </ul>
             </div>
         </div>

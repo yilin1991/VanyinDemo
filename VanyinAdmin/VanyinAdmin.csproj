@@ -58,28 +58,26 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="css\Add.css" />
-    <Content Include="css\bootstrap.min.css" />
-    <Content Include="css\flat-ui.min.css" />
-    <Content Include="css\font-awesome-ie7.css" />
+    <Content Include="Category\index.aspx" />
+    <Content Include="Controls\Header.ascx" />
+    <Content Include="Controls\Left.ascx" />
+    <Content Include="css\edit.css" />
     <Content Include="css\font-awesome-ie7.min.css" />
-    <Content Include="css\font-awesome.css" />
     <Content Include="css\font-awesome.min.css" />
-    <Content Include="css\index.css" />
-    <Content Include="css\inputStyle.css" />
-    <Content Include="css\List.css" />
-    <Content Include="css\message.css" />
-    <Content Include="css\pagination.css" />
+    <Content Include="css\list.css" />
+    <Content Include="css\login.css" />
     <Content Include="css\style.css" />
-    <Content Include="css\upload.css" />
     <Content Include="font\fontawesome-webfont.svg" />
     <Content Include="img\AddImgBtn.png" />
     <Content Include="img\delImgico.png" />
+    <Content Include="img\header\headerlogo.png" />
+    <Content Include="img\header\user.jpg" />
     <Content Include="img\leftico.png" />
     <Content Include="img\leftico01.png" />
     <Content Include="img\leftico02.png" />
     <Content Include="img\leftico03.png" />
     <Content Include="img\leftico04.png" />
+    <Content Include="img\left\leftico.png" />
     <Content Include="img\light.png" />
     <Content Include="img\list.gif" />
     <Content Include="img\list1.gif" />
@@ -88,6 +86,7 @@
     <Content Include="img\login_bg.png" />
     <Content Include="img\login_contentbg.png" />
     <Content Include="img\logo.png" />
+    <Content Include="img\Logo1.jpg" />
     <Content Include="img\navbg.png" />
     <Content Include="img\sj.png" />
     <Content Include="img\sj1.png" />
@@ -99,19 +98,9 @@
     <Content Include="img\typography.jpg" />
     <Content Include="img\user_ico.png" />
     <Content Include="img\user_pass.png" />
-    <Content Include="js\application.js" />
-    <Content Include="js\bootstrap.min.js" />
-    <Content Include="js\flat-ui.min.js" />
+    <Content Include="Index.aspx" />
     <Content Include="js\jquery-1.11.1.min.js" />
-    <Content Include="js\jquery.admin.js" />
-    <Content Include="js\jquery.form.js" />
-    <Content Include="js\jquery.form.min.js" />
-    <Content Include="js\jquery.leadinupload.js" />
-    <Content Include="js\jquery.message.js" />
-    <Content Include="js\jquery.pagination.js" />
-    <Content Include="js\jquery.uploadfile-add.js" />
-    <Content Include="js\jquery.uploadfile.js" />
-    <Content Include="js\Validform_v5.3.2.js" />
+    <Content Include="js\jquery.public.js" />
     <Content Include="kindeditor-4.1.10\asp.net\bin\LitJSON.dll" />
     <Content Include="kindeditor-4.1.10\asp.net\demo.aspx" />
     <Content Include="kindeditor-4.1.10\asp.net\README.txt" />
@@ -321,6 +310,34 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Category\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Header.ascx.designer.cs">
+      <DependentUpon>Header.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Left.ascx.cs">
+      <DependentUpon>Left.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Left.ascx.designer.cs">
+      <DependentUpon>Left.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -331,11 +348,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="kindeditor-4.1.10\asp.net\file_manager_json.ashx" />
     <Content Include="font\fontawesome-webfont.eot" />
     <Content Include="font\fontawesome-webfont.ttf" />
     <Content Include="font\fontawesome-webfont.woff" />
     <Content Include="font\FontAwesome.otf" />
-    <Content Include="kindeditor-4.1.10\asp.net\file_manager_json.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

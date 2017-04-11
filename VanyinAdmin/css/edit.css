@@ -1,0 +1,124 @@
+
+.edittop{width: 100%;height: 35px;padding: 0 15px;margin-top: 20px;}
+.edittop ul{width: 100%;height: 100%; border-bottom: solid 1px #E7E7E7;}
+.edittop ul li{height: 100%;}
+.edittop ul li:nth-child(1){float: left;border-bottom: solid 3px #086B86;}
+.edittop ul li:nth-child(1) p{line-height: 32px;font-size: 14px;}
+.edittop ul li:nth-child(2){float: right;margin-right: 20px;}
+.edittop ul li:nth-child(2) a{display: inline-block;height: 20px;line-height: 20px;margin-top: 6px;font-size: 12px;color: #333333;}
+.edittop ul li:nth-child(2) a:hover{color: #EA2020;}
+
+.editbody{width: 100%;height: auto;padding: 0 15px;margin-top: 40px;}
+
+
+.edit_group{width: 100%;display: inline-flex;margin-bottom: 20px;}
+
+.edit_group .label_title{width: 100px;text-align: right;font-size: 13px;line-height: 30px;}
+.edit_group .controls{display: table;margin-left: 15px;display: inline-flex;align-items: center;}
+.edit_group .controls input[type=text]{border: solid 1px #E7E7E7;display: inline-block;height: 30px;padding: 0 10px;}
+.edit_group .controls select{border: solid 1px #E7E7E7;height: 30px;padding: 0 10px;font-size: 12px;}
+.edit_group .controls select option{line-height: 25px;padding: 0 10px;}
+.edit_group .controls .inputtext100{width: 100px;}
+.edit_group .controls .inputtext200{width: 200px;}
+.edit_group .controls .inputtext300{width: 300px;}
+.edit_group .controls .inputtext400{width: 400px;}
+
+
+
+.edit_group .controls .formmsg{display: inline-block; font-size: 12px;color: #4B4B4B;margin-left: 10px;}
+.edit_group .controls .textarea400{width: 600px; height: 80px;padding: 5px 10px; line-height: 20px; font-size: 12px;border: solid 1px #E7E7E7;}
+
+.edit_group .controls label.checbox{display: inline-block; line-height: 30px;font-size: 12px;margin-left: 10px;}
+.edit_group .controls label.checbox:nth-child(1){margin-left: 0;}
+
+.edit_group .controls label.checbox input[type=checkbox]{display: block;float: left;height: 16px;width: 16px;margin-top: 8px;margin-right: 3px;}
+.edit_group .controls label.checbox span{display: block;float: left;}
+
+
+.edit_group .controls label.radio{display: inline-block; line-height: 30px;font-size: 12px;margin-left: 10px;}
+.edit_group .controls label.radio:nth-child(1){margin-left: 0;}
+
+.edit_group .controls label.radio input[type=radio]{display: block;float: left;height: 16px;width: 16px;margin-top: 8px;margin-right: 3px;}
+.edit_group .controls label.radio span{display: block;float: left;}
+
+.editbtn{display: table;margin-left: 125px;margin-top: 30px;margin-bottom: 100px;}
+
+.editbtn input{border: solid 1px #E7E7E7;background-color: #bdbdbd;width: 100px;height: 35px;border-radius: 5px;appearance: none;-webkit-appearance: none;-moz-appearance: none;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

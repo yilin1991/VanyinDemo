@@ -79,10 +79,21 @@ namespace Vanyin.BLL
 			return dal.DeleteList(Idlist );
 		}
 
-		/// <summary>
-		/// 得到一个对象实体
-		/// </summary>
-		public Vanyin.Model.Category GetModel(int Id)
+        /// <summary>
+        /// 获取子类别
+        /// </summary>
+        /// <param name="parentId">父编号</param>
+        /// <param name="stateInfo">状态</param>
+        /// <returns></returns>
+        public DataTable GetListChild(int parentId)
+        {
+            return dal.GetListChild(parentId);
+        }
+
+        /// <summary>
+        /// 得到一个对象实体
+        /// </summary>
+        public Vanyin.Model.Category GetModel(int Id)
 		{
 			
 			return dal.GetModel(Id);

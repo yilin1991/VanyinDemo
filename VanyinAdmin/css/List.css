@@ -1,63 +1,45 @@
-.contentBox ul.search{width: 100%; height: 40px;}
+.searchbox{width: 100%;display: table; padding: 0 15px;margin-top: 15px;}
+
+.searchbox li{float: left;height: 25px;margin-right: 5px;margin: 5px 5px 5px 0;}
+.searchbox li:nth-child(1){line-height: 25px;font-size: 12px;}
+.searchbox li select{height: 25px;padding: 0 5px;}
+.searchbox li select option{padding: 0 5px;line-height: 25px;}
+.searchbox li input[type=text]{height: 21px;padding: 0 10px;width: 120px;}
+.searchbox li input[type=button]{height: 26px;padding: 0 10px;font-size:12px;}
+
+.operation{width: 100%;display: block;height: 25px;padding: 0 15px;margin-top: 20px;}
+
+.operation li{float: left;height: 100%;margin-right: 10px;}
+.operation li a{display: block;padding: 0 15px;height: 100%;border: solid 1px #E7E7E7;font-size: 12px;line-height: 25px;background-color: #EEEEEE;color: #000000;border-radius: 3px;}
 
 
-.contentBox ul.search li{float: left;height: 30px;line-height: 30px;margin-right: 10px;}
-.contentBox ul.search li select{height: 30px;padding: 0 10px 0 5px;font-size: 12px;}
-.contentBox ul.search li input[type="text"]{height: 25px;font-size: 12px;padding: 0 10px;}
+.listbody{margin-top: 20px;overflow-x: auto;margin-left: 15px;margin-right: 15px;padding-bottom:30px;}
+.listbody ul{display: -webkit-inline-flex;display: inline-flex;min-width: 100%;margin-bottom: 1px;}
+.listbody ul{background-color: #ececec;}
+.listbody ul:hover{background-color: #dfdfdf;}
 
+.listbody ul.title{background-color: #c4c4c4;}
+.listbody ul.title:hover{background-color: #c4c4c4;}
 
-.operation {width: 100%; height: 30px; margin-top: 10px;}
+.listbody ul li{display: inline-flex;justify-content: center;align-items: center;font-size: 12px;padding: 10px 10px;border-right: 1px solid #FFFFFF;line-height: 20px;color: #1d1d1d;}
+.listbody ul:nth-child(2n+1).title li{font-size: 14px;color: #000;}
+.listbody ul li:nth-child(1) input[type=checkbox]{width: 16px; height: 16px;}
+.listbody ul li.headline a{color: #1d1d1d;}
+.listbody ul li.headline a:hover{color: #909090;}
+.listbody ul li:nth-child(2) a{display: inline-block;margin: 0 5px;color: #3b4040;}
+.listbody ul li:nth-child(2) a:hover{color: #ff0000;}
 
-.operation li{float: left;height: 30px;padding-right: 10px;}
+.listbody ul li a{display: inline-block;}
+.listbody ul li.textleft{justify-content:flex-start;padding:10px 20px;}
+.listbody ul li.state a i{font-size: 20px;line-height: 20px;}
+.listbody ul li.state a i.icon-remove-sign{color: #b55050;}
+.listbody ul li.state a i.icon-ok-sign{color: #469d44;}
+.listbody ul li.state a i.icon-warning-sign{color: #ccd136;}
+.listbody ul li.img img{max-width:20px;}
 
-.operation li a{display: block;height: 28px; padding: 0 12px;line-height: 28px; background-color: #F1F5F7;border-radius: 5px; color: #000;border: solid 1px #D3DBDE;}
+.pagelistbody{width: 100%;padding: 0 15px; height: 30px;margin-top: 20px;margin-bottom: 50px;}
 
-.operation li a i{padding-right: 5px; font-size: 16px;}
-.operation li.operadd a i{color: #5da03c;}
-.operation li.operedit a i{color: #fb961f;}
-.operation li.operdel a i{ color: #9b2020;}
-
-
-.listtable{float: left; width: 100%; border:solid 1px #CBCBCB; margin-top: 30px;overflow-x: auto;}
-
-.listtable ul{float: left;min-width: 100%;display: inline-flex;border-top: solid 1px #CBCBCB;}
-.listtable ul li{border-left: dotted 1px #CBCBCB;}
-
-
-.listtable ul.tbtitle li{float: left;height: 40px;line-height: 40px;padding: 0 10px;text-align: center;overflow: hidden;border-color: #F0F5F7;}
-
-.listtable ul.listli li{float: left;height: 50px;line-height: 50px;padding: 0 10px;text-align: center;overflow: hidden;}
-.listtable ul li:first-child{border: none;}
-
-.listtable ul li.allselect input[type=checkbox]{display: block;margin: 13px 15px 0 15px;}
-.listtable ul.listli li.allselect input[type=checkbox]{display: block;margin-top: 18px;}
-
-.listtable ul:nth-child(2n+1){ background-color: #EAEDF0;}
-.listtable ul.tbtitle{background-color: #F0F5F7;border:none}
-ul.listli .operli a { padding: 0 3px;}
-ul.listli .operli a i{font-size: 20px;}
-
-ul.listli .operli a.operliadd i{color: #5da03c;}
-ul.listli .operli a.operliedit i{color: #fb961f;}
-ul.listli .operli a.operlidel i{color: #9b2020;}
-ul.listli .operli a.operliready i{color: #000;}
-
-ul.listli a.suba{display: block;width: 100%; height: 100%;cursor: default;}
-
-ul.listli li.state a i{font-size: 20px;}
-
-ul.listli li.state a i.icon-remove-sign{color: #9b2020;}
-ul.listli li.state a i.icon-ok-sign{color: #5da03c;}
-
-
-
-
-
-
-
-
-
-
-
-
-
+.pagelistbody .pagebox{float: left;width: 30%;height: 100%; background-color: #086B86;}
+.pagelistbody .pagemsg{float: right;height: 100%;}
+.pagelistbody .pagemsg p{font-size: 12px;line-height: 30px;}
+.pagelistbody .pagemsg p span{color: #ff0000;padding: 0 2px;}
