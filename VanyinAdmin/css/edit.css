@@ -22,10 +22,19 @@
 .edit_group .controls .inputtext200{width: 200px;}
 .edit_group .controls .inputtext300{width: 300px;}
 .edit_group .controls .inputtext400{width: 400px;}
-
+.edit_group .controls .inputtext500{width: 500px;}
+.edit_group .controls .inputtext600{width: 600px;}
+.edit_group .controls .inputtext700{width: 700px;}
+.edit_group .controls .inputtext800{width: 800px;}
 
 
 .edit_group .controls .formmsg{display: inline-block; font-size: 12px;color: #4B4B4B;margin-left: 10px;}
+
+.edit_group .controls .formmsg.error{color:#EA2020;}
+.edit_group .controls .formmsg.success{color:#2f852c;}
+
+
+
 .edit_group .controls .textarea400{width: 600px; height: 80px;padding: 5px 10px; line-height: 20px; font-size: 12px;border: solid 1px #E7E7E7;}
 
 .edit_group .controls label.checbox{display: inline-block; line-height: 30px;font-size: 12px;margin-left: 10px;}

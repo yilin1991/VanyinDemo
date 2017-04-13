@@ -309,12 +309,19 @@ namespace Vanyin.DAL
         /// <param name="PId">父ID</param>
         /// <param name="KId">种类ID</param>
         /// <returns></returns>
-        public DataTable GetListChild(int PId)
+        public DataTable GetListChild(int PId,bool state)
         {
             StringBuilder strSql = new StringBuilder();
             strSql.Append("select Id,NumId,Title,SubTitle,ParentId,LevelNum,ImgUrl,DefaultImgUrl,SortNum,StateInfo,Explain,Remark");
             strSql.Append(" FROM tb_Category ");
-            strSql.Append(" order by SortNum asc,Id desc");
+            //strSql.Append(" Where ParentId=" + PId);
+
+            if (state)
+            {
+                strSql.Append("Where StateInfo=1 ");
+            }
+
+            strSql.Append(" order by SortNum asc,Id asc");
             DataSet ds = DbHelperSQL.Query(strSql.ToString());
             DataTable oldData = ds.Tables[0] as DataTable;
             if (oldData == null)

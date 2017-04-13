@@ -113,6 +113,40 @@ li{list-style: none;}
 
 
 
+.filebox {
+    width:100%;
+    height:100%;
+}
+
+.filebox  li{
+    float:left;
+    height:100%;
+}
+
+
+.filebox  li .btnfilebtn {
+    display:block;
+    float:left;
+height:32px;
+width:90px;
+background-color:#c3c4c6;
+margin:0;
+padding:0;
+line-height:32px;
+text-align:center;
+font-size:13px;
+color:#EA2020;
+}
+
+
+
+
+    .filebox li.fileinput input[type=file] {
+    display:none;
+    }
+
+    .filebox li.filemessage {
+    line-height:32px;margin-left:10px}
 
 
 

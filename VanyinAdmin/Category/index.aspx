@@ -36,36 +36,11 @@
                         <span>></span>
                         <a href="/Category/index.aspx">类别管理</a>
                     </div>
-                    <ul class="searchbox boxsizing">
-                        <li>
-                            <p>
-                                检索条件：<p>
-                        </li>
-                        <li>
-                            <select name="">
-                                <option value="">选择类别</option>
-                            </select></li>
-                        <li>
-                            <select name="">
-                                <option value="">选择类别</option>
-                            </select></li>
-                        <li>
-                            <input type="text" name="" id="" value="" placeholder="关键字" /></li>
-                        <li>
-                            <input type="text" name="" id="" value="" placeholder="开始时间" /></li>
-                        <li>
-                            <input type="text" name="" id="" value="" placeholder="关键字" /></li>
-                        <li>
-                            <input type="button" name="" id="" value="搜索" /></li>
-                        <li>
-                            <input type="button" name="" id="" value="显示全部" /></li>
-                        <li>
-                            <input type="button" name="" id="" value="导出" /></li>
-                    </ul>
+                  
 
                     <ul class="operation boxsizing">
-                        <li><a href="#">添加</a></li>
-                        <li><a href="#">删除</a></li>
+                        <li><a href="Edit.aspx">添加</a></li>
+                        <%--<li><a href="#">删除</a></li>--%>
                     </ul>
 
 
@@ -81,9 +56,9 @@
                             <li style="width: 100px;">排序</li>
                             <li style="width: 100px;">类别图片</li>
                             <li style="width: 100px;">默认图片</li>
-                            <li style="width: 80px;">操作</li>
+                            <li style="width: 100px;">操作</li>
                         </ul>
-                        <asp:Repeater runat="server" ID="repList" OnItemDataBound="repList_ItemDataBound">
+                        <asp:Repeater runat="server" ID="repList" OnItemDataBound="repList_ItemDataBound" OnItemCommand="repList_ItemCommand">
                             <ItemTemplate>
                                 <ul>
                                     <li style="width: 40px;">
@@ -91,16 +66,16 @@
                                     <li style="width: 150px;" class="headline textleft">
                                          <asp:Literal ID="LitFirst" runat="server"></asp:Literal>
                                          <asp:HiddenField ID="txtClassLayer" runat="server" Value='<%#Eval("LevelNum") %>' />
-                                        <a href="#"><%# namenull+ Eval("Title") %></a></li>
-                                    <li style="width: 200px;"><%#Eval("SubTitle") %></li>
-                                    <li style="width: 100px;"><%# Eval("Id") %></li>
-                                    <li style="width: 100px;" class="state"><a href="#"><i class="icon-warning-sign"></i></a></li>
+                                        <a href="Edit.aspx?id=<%# Eval("Id") %>"><%# namenull+ Eval("Title") %></a></li>
+                                    <li style="width: 200px;"><%#string.IsNullOrEmpty( Eval("SubTitle").ToString())?"—":Eval("Subtitle").ToString() %></li>
+                                    <li style="width: 100px;"><asp:Label runat="server" ID="lbId" Text='<%# Eval("Id") %>'></asp:Label></li>
+                                    <li style="width: 100px;" class="state"><asp:LinkButton runat="server" CommandName="lbtnState" id="lbtnState"><i class="<%# Eval("StateInfo").ToString()=="1"?"icon-ok-sign":"icon-remove-sign" %>"></i></asp:LinkButton></a></li>
                                     <li style="width: 100px;"><%# Eval("SortNum") %></li>
+                                    <li style="width: 100px;" class="img"><%# string.IsNullOrEmpty(Eval("ImgUrl").ToString())?"—":"<img src=\""+Eval("ImgUrl").ToString()+"\" />" %>
+                                        </li>
                                     <li style="width: 100px;" class="img">
-                                        <img src="../img/typography.jpg" /></li>
-                                    <li style="width: 100px;" class="img">
-                                        <img src="../img/typography.jpg" /></li>
-                                    <li style="width: 80px;"><a href="#">添加子类别</a></li>
+                                       <%# string.IsNullOrEmpty(Eval("ImgUrl").ToString())?"—":"<img src=\""+Eval("ImgUrl").ToString()+"\" />" %></li>
+                                    <li style="width: 100px;"><a href="Edit.aspx?pid=<%# Eval("Id") %>">添加子类别</a></li>
                                 </ul>
                             </ItemTemplate>
                         </asp:Repeater>

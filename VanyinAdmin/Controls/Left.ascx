@@ -16,18 +16,16 @@
                 <a><span><i class=" icon-inbox"></i></span><span>类别管理</span></a>
             </li>
             <li class="leftlink">
-                <a href="/Category/index.aspx"><span></span><i class=" icon-caret-right"></i><span>类别管理</span></a>
+                <a href="/Category/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>类别管理</span></a>
             </li>
         </ul>
         <ul class="leftlist">
             <li class="title">
-                <a><span><i class=" icon-inbox"></i></span><span>案例管理</span></a>
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>设计模版</span></a>
             </li>
             <li class="leftlink">
-                <a href="#"><span></span><i class=" icon-caret-right"></i><span>案例列表</span></a>
-                <a href="#"><span></span><i class=" icon-caret-right"></i><span>案例列表</span></a>
-                <a href="#"><span></span><i class=" icon-caret-right"></i><span>案例列表</span></a>
-
+                <a href="/Template/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>模版管理</span></a>
+                <a href="/Template/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加模版</span></a>
             </li>
         </ul>
     </div>

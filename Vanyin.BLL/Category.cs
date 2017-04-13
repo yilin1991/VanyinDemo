@@ -85,9 +85,9 @@ namespace Vanyin.BLL
         /// <param name="parentId">父编号</param>
         /// <param name="stateInfo">状态</param>
         /// <returns></returns>
-        public DataTable GetListChild(int parentId)
+        public DataTable GetListChild(int parentId,bool state)
         {
-            return dal.GetListChild(parentId);
+            return dal.GetListChild(parentId,state);
         }
 
         /// <summary>

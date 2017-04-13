@@ -23,13 +23,15 @@ namespace VanyinAdmin.Category
             }
         }
 
+        
+
 
         /// <summary>
         /// 绑定类别列表
         /// </summary>
         void BindRepList(int parentId)
         {
-            DataTable dt= bll.GetListChild(parentId);
+            DataTable dt= bll.GetListChild(parentId,false);
 
             repList.DataSource = dt;
          
@@ -54,6 +56,23 @@ namespace VanyinAdmin.Category
                 {
                     LitFirst.Text = string.Format(LitStyle, classLayer * 18, "|--");
                 }
+            }
+        }
+
+        protected void repList_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "lbtnState")
+            {
+                Label lbId = e.Item.FindControl("lbId") as Label;
+
+                Vanyin.Model.Category model = bll.GetModel(int.Parse(lbId.Text));
+
+                model.StateInfo = model.StateInfo == 1 ? 0 : 1;
+
+                bll.Update(model);
+
+                BindRepList(0);
+
             }
         }
     }
