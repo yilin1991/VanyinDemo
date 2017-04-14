@@ -76,5 +76,33 @@ namespace Vanyin.Web.UI
         }
 
 
+        /// <summary>
+        /// 获取类别名称
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public string GetCategoryName(int id)
+        {
+            BLL.Category bll = new BLL.Category();
+
+            Model.Category model = bll.GetModel(id);
+
+
+            if (model != null)
+            {
+                return model.Title;
+            }
+            else
+            {
+                return "未找到";
+            }
+
+        }
+
+
+        
+
+
+
     }
 }

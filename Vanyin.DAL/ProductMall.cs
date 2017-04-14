@@ -70,7 +70,7 @@ namespace Vanyin.DAL
 					new SqlParameter("@Num", SqlDbType.NVarChar,100),
 					new SqlParameter("@NameInfo", SqlDbType.NVarChar,200),
 					new SqlParameter("@Integral", SqlDbType.Int,4),
-					new SqlParameter("@Price", SqlDbType.Decimal,9),
+					new SqlParameter("@Price", SqlDbType.NVarChar,200),
 					new SqlParameter("@Stock", SqlDbType.Int,4),
 					new SqlParameter("@ImgUrl", SqlDbType.NVarChar,200),
 					new SqlParameter("@MallType", SqlDbType.Int,4),
@@ -126,8 +126,8 @@ namespace Vanyin.DAL
 					new SqlParameter("@Num", SqlDbType.NVarChar,100),
 					new SqlParameter("@NameInfo", SqlDbType.NVarChar,200),
 					new SqlParameter("@Integral", SqlDbType.Int,4),
-					new SqlParameter("@Price", SqlDbType.Decimal,9),
-					new SqlParameter("@Stock", SqlDbType.Int,4),
+                    new SqlParameter("@Price", SqlDbType.NVarChar,200),
+                    new SqlParameter("@Stock", SqlDbType.Int,4),
 					new SqlParameter("@ImgUrl", SqlDbType.NVarChar,200),
 					new SqlParameter("@MallType", SqlDbType.Int,4),
 					new SqlParameter("@StateInfo", SqlDbType.Int,4),
@@ -258,7 +258,7 @@ namespace Vanyin.DAL
 				}
 				if(row["Price"]!=null && row["Price"].ToString()!="")
 				{
-					model.Price=decimal.Parse(row["Price"].ToString());
+					model.Price=row["Price"].ToString();
 				}
 				if(row["Stock"]!=null && row["Stock"].ToString()!="")
 				{

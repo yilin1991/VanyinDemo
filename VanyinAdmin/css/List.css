@@ -4,8 +4,8 @@
 .searchbox li:nth-child(1){line-height: 25px;font-size: 12px;}
 .searchbox li select{height: 25px;padding: 0 5px;}
 .searchbox li select option{padding: 0 5px;line-height: 25px;}
-.searchbox li input[type=text]{height: 21px;padding: 0 10px;width: 120px;}
-.searchbox li input[type=button]{height: 26px;padding: 0 10px;font-size:12px;}
+.searchbox li input[type=text]{height: 23px;padding: 0 10px;width: 120px;}
+.searchbox li input[type=submit]{height: 26px;padding: 0 10px;font-size:12px;}
 
 .operation{width: 100%;display: block;height: 25px;padding: 0 15px;margin-top: 20px;}
 
@@ -39,7 +39,7 @@
 
 .pagelistbody{width: 100%;padding: 0 15px; height: 30px;margin-top: 20px;margin-bottom: 50px;}
 
-.pagelistbody .pagebox{float: left;width: 30%;height: 100%; background-color: #086B86;}
+.pagelistbody .pagebox{float: left;height: 100%; }
 .pagelistbody .pagemsg{float: right;height: 100%;}
 .pagelistbody .pagemsg p{font-size: 12px;line-height: 30px;}
 .pagelistbody .pagemsg p span{color: #ff0000;padding: 0 2px;}

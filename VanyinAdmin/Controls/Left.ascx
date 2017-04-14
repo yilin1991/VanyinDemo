@@ -28,6 +28,24 @@
                 <a href="/Template/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加模版</span></a>
             </li>
         </ul>
+         <ul class="leftlist">
+            <li class="title">
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>兑换商品</span></a>
+            </li>
+            <li class="leftlink">
+                <a href="/MallProduct/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>商品管理</span></a>
+                <a href="/MallProduct/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加商品</span></a>
+            </li>
+        </ul>
+         <ul class="leftlist">
+            <li class="title">
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>文件管理</span></a>
+            </li>
+            <li class="leftlink">
+                <a href="/FileManage/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>文件管理</span></a>
+                <a href="/FileManage/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加文件</span></a>
+            </li>
+        </ul>
     </div>
 
 </div>

@@ -30,7 +30,7 @@ namespace Vanyin.Model
 		private string _num;
 		private string _nameinfo;
 		private int _integral=0;
-		private decimal? _price;
+		private string  _price;
 		private int _stock=1;
 		private string _imgurl;
 		private int? _malltype;
@@ -74,7 +74,7 @@ namespace Vanyin.Model
 		/// <summary>
 		/// 
 		/// </summary>
-		public decimal? Price
+		public string Price
 		{
 			set{ _price=value;}
 			get{return _price;}

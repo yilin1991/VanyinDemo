@@ -88,6 +88,51 @@ namespace Vanyin.Common
         }
         #endregion
 
+        #region 将字符串转换成YYYY-MM-DD
+        /// <summary>
+        /// 将字符串转换成YYYY-MM-DD
+        /// </summary>
+        /// <param name="date">时间字符串</param>
+        /// <returns></returns>
+        public static string GetDate(string date)
+        {
+            try
+            {
+                return Convert.ToDateTime(date).ToString("yyyy-MM-dd");
+            }
+            catch
+            {
+                return "日期格式错误";
+            }
+        }
+        #endregion
+
+        #region 获取状态类别
+        /// <summary>
+        /// 获取状态类别
+        /// </summary>
+        /// <param name="stateNum"></param>
+        /// <returns></returns>
+        public static string GetStateClass(int stateNum)
+        {
+            string strClass="";
+            switch (stateNum)
+            {
+                case 0:
+                    strClass = "icon-remove-sign";
+                    break;
+                case 1:
+                    strClass = "icon-ok-sign";
+                    break;
+                case 2:
+                    strClass = "icon-warning-sign";
+                    break;
+            }
+            return strClass;
+
+        }
+        #endregion
+
         #region 截取字符长度
         /// <summary>
         /// 截取字符长度

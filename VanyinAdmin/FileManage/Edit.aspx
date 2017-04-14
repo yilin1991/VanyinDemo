@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" ValidateRequest="false" CodeBehind="Edit.aspx.cs" Inherits="VanyinAdmin.Template.Edit" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true"  ValidateRequest="false" CodeBehind="Edit.aspx.cs" Inherits="VanyinAdmin.FileManage.Edit" %>
 
 <%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/Controls/Left.ascx" TagPrefix="uc1" TagName="Left" %>
@@ -35,9 +35,9 @@
                         <span>位置：</span>
                         <a href="index.aspx">首页</a>
                         <span>></span>
-                        <a href="/Template/index.aspx">设计模版</a>
+                        <a href="/FileManage/index.aspx">文件管理</a>
                         <span>></span>
-                        <span>设计模版编辑</span>
+                        <span>文件管理</span>
                     </div>
 
                     <div class="edittop boxsizing">
@@ -45,29 +45,21 @@
                             <li class="boxsizing">
                                 <p>基本信息</p>
                             </li>
-                            <li><a href="/Template/index.aspx">返回列表</a></li>
+                            <li><a href="/FileManage/index.aspx">返回列表</a></li>
                         </ul>
                     </div>
 
                     <div class="editbody boxsizing">
                         <div class="edit_group">
-                            <label class="label_title">标题</label>
+                            <label class="label_title">文件名称</label>
 
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtTitle" CssClass="inputtext400" datatype="*" nullmsg="请输入模版标题！" errormsg="模版标题不能为空！"></asp:TextBox>
-                                <span class="formmsg">模版标题不能为空</span>
+                                <asp:TextBox runat="server" ID="txtTitle" CssClass="inputtext400" datatype="*" nullmsg="请输入文件名称！" errormsg="文件名称不能为空！"></asp:TextBox>
+                                <span class="formmsg">文件名称不能为空</span>
                             </div>
 
                         </div>
-                        <div class="edit_group">
-                            <label class="label_title">副标题</label>
-
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtSubTitle" CssClass="inputtext400" ></asp:TextBox>
-                                <span class="formmsg">请输入模版副标题</span>
-                            </div>
-                        </div>
-
+                        
                         <div class="edit_group">
                             <label class="label_title">所属类别</label>
 
@@ -80,30 +72,15 @@
                         </div>
 
                         <div class="edit_group">
-                            <label class="label_title">关键字</label>
+                            <label class="label_title">链接地址</label>
 
                             <div class="controls">
-                                <asp:TextBox runat="server" ID="txtKey" CssClass="inputtext400"  Text="" datatype="*" nullmsg="请输入关键字，多个关键字以“|”分割！" errormsg="请输入关键字，多个关键字以“|”分割！"></asp:TextBox>
-                                <span class="formmsg">请输入关键字，多个关键字以“|”分割</span>
+                                <asp:TextBox runat="server" ID="txtLink" CssClass="inputtext400"  Text=""></asp:TextBox>
+                                <span class="formmsg">请输入链接地址</span>
                             </div>
 
                         </div>
-                        <div class="edit_group">
-                            <label class="label_title">模版价格</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtPrice" CssClass="inputtext400" Text="100元/款" datatype="*" nullmsg="请输入模版价格！" errormsg="模版价格不能为空！"></asp:TextBox>
-                                <span class="formmsg">请输入模版价格</span>
-                            </div>
-
-                        </div>
-                        <div class="edit_group">
-                            <label class="label_title">设计周期</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtCycle" CssClass="inputtext400" Text="3个工作日" datatype="*" nullmsg="请输入设计周期！" errormsg="设计周期不能为空！"></asp:TextBox>
-                                <span class="formmsg">设计周期不能为空</span>
-                            </div>
-
-                        </div>
+                      
                         <div class="edit_group">
                             <label class="label_title">展示图片</label>
 
@@ -117,35 +94,7 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="edit_group">
-                            <label class="label_title">设计说明</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtDesignExplain" TextMode="MultiLine" Height="500" CssClass="inputtext800" ></asp:TextBox>
-                            </div>
-                        </div>
-
-                        <div class="edit_group">
-                            <label class="label_title">印刷说明</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtPrintExplain" TextMode="MultiLine" Height="500"  CssClass="inputtext800"></asp:TextBox>
-                            </div>
-                        </div>
-
-                        <div class="edit_group">
-                            <label class="label_title">模版详情</label>
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtDetailRemark" TextMode="MultiLine" Height="500"  CssClass="inputtext800"></asp:TextBox>
-                            </div>
-                        </div>
-                        <div class="edit_group">
-                            <label class="label_title">设计工具</label>
-
-                            <div class="controls">
-                                <asp:TextBox runat="server" ID="txtDesignTools" Text="Illustrator,Photoshop" CssClass="inputtext400"></asp:TextBox>
-                                <span class="formmsg">请输入设计工具</span>
-                            </div>
-
-                        </div>
+                       
                          <div class="edit_group">
                             <label class="label_title">排序</label>
 
@@ -156,15 +105,12 @@
 
                         </div>
                          <div class="edit_group">
-                            <label class="label_title">模版属性</label>
+                            <label class="label_title">文件属性</label>
 
                             <div class="controls">
                                 <label class="checbox">
                                     <asp:CheckBox runat="server" ID="ckHot" />
                                     <span>热门</span></label>
-                                 <label class="checbox">
-                                    <asp:CheckBox runat="server" ID="ckIndex" />
-                                    <span>首页</span></label>
                                  <label class="checbox">
                                     <asp:CheckBox runat="server" ID="ckRec" />
                                     <span>推荐</span></label>
@@ -172,7 +118,7 @@
                         </div>
 
                         <div class="edit_group">
-                            <label class="label_title">类别状态</label>
+                            <label class="label_title">文件状态</label>
 
                             <div class="controls">
                                 <label class="checbox">
@@ -229,7 +175,7 @@
 
                     });
 
-                    SetLeftMenu("设计模版", "添加模版");
+                    SetLeftMenu("文件管理", "添加文件");
 
 
                     KindEditor.ready(function (K) {
@@ -266,3 +212,4 @@
 </body>
 
 </html>
+

@@ -7,10 +7,10 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace VanyinAdmin.Template {
+namespace VanyinAdmin.FileManage {
     
     
-    public partial class index {
+    public partial class Index {
         
         /// <summary>
         /// Header 控件。

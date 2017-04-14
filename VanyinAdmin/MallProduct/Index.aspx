@@ -1,5 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="VanyinAdmin.Template.index" %>
-
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="VanyinAdmin.MallProduct.Index" %>
 
 <%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/Controls/Left.ascx" TagPrefix="uc1" TagName="Left" %>
@@ -36,7 +35,9 @@
                         <span>位置：</span>
                         <a href="index.aspx">首页</a>
                         <span>></span>
-                        <a href="/Template/index.aspx">模版管理</a>
+                        <a href="/ProductMall/index.aspx">兑换商品</a>
+                        <span>></span>
+                        <span>商品管理</span>
                     </div>
                     <ul class="searchbox boxsizing">
                         <li>
@@ -51,11 +52,9 @@
                         <li>
                             <asp:DropDownList runat="server" ID="ddlState">
                                 <asp:ListItem Value="0">请选择状态</asp:ListItem>
-                                <asp:ListItem Value="1">正常模版</asp:ListItem>
-                                <asp:ListItem Value="2">禁用模版</asp:ListItem>
-                                <asp:ListItem Value="3">热门模版</asp:ListItem>
-                                <asp:ListItem Value="4">首页显示</asp:ListItem>
-                                <asp:ListItem Value="5">推荐模版</asp:ListItem>
+                                <asp:ListItem Value="1">上架</asp:ListItem>
+                                <asp:ListItem Value="2">下架</asp:ListItem>
+                               
                             </asp:DropDownList>
                         </li>
                         <li>
@@ -80,15 +79,15 @@
                             <li style="width: 40px;">
                                 <input type="checkbox" name="" id="" value="" /></li>
 
-                            <li style="width: 150px;">模版编号</li>
-                            <li style="width: 250px;">标题</li>
+                            <li style="width: 150px;">商品编号</li>
+                            <li style="width: 250px;">商品名称</li>
                             <li style="width: 100px;">所属类别</li>
                             <li style="width: 100px;">展示图片</li>
                             <li style="width: 60px;">状态</li>
                             <li style="width: 60px;">排序</li>
-                            <li style="width: 60px;">热门</li>
-                            <li style="width: 60px;">首页</li>
-                            <li style="width: 60px;">推荐</li>
+                            <li style="width: 100px;">所需积分</li>
+                            <li style="width: 100px;">实际价格</li>
+                            <li style="width: 100px;">商品库存</li>
                             <li style="width: 150px;">添加时间</li>
                         </ul>
                         <asp:Repeater runat="server" ID="repList" OnItemCommand="repList_ItemCommand">
@@ -100,20 +99,20 @@
                                         <asp:HiddenField runat="server" ID="lbId" Value='<%# Eval("Id") %>' />
                                     </li>
                                     <li style="width: 250px;" class="headline">
-                                        <a href="Edit.aspx?id=<%# Eval("Id")+strUrl.ToString()+"&page="+page %>"><%# Eval("Title") %></a></li>
-                                    <li style="width: 100px;"><%# GetCategoryName(int.Parse(Eval("TypeId").ToString())) %></li>
+                                        <a href="Edit.aspx?id=<%# Eval("Id")+strUrl.ToString()+"&page="+page %>"><%# Eval("NameInfo") %></a></li>
+                                    <li style="width: 100px;"><%# GetCategoryName(int.Parse(Eval("MallType").ToString())) %></li>
                                     <li style="width: 100px;" class="img"><%# string.IsNullOrEmpty(Eval("ImgUrl").ToString())?"—":"<img src=\""+Eval("ImgUrl").ToString()+"\" />" %> </li>
                                     <li style="width: 60px;" class="state">
                                         <asp:LinkButton runat="server" CommandName="lbtnState" ID="lbtnState"><i class="<%# Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("StateInfo").ToString()))  %>"></i></asp:LinkButton></a></li>
                                     <li style="width: 60px;"><%# Eval("SortNum") %></li>
-                                    <li style="width: 60px;" class="state">
-                                        <asp:LinkButton runat="server" CommandName="lbtnHot" ID="lbtnHot"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsHot").ToString()))  %>"></i></asp:LinkButton></a>
+                                    <li style="width: 100px;">
+                                       <%# Eval("Integral") %>
                                     </li>
-                                    <li style="width: 60px;" class="state">
-                                        <asp:LinkButton runat="server" CommandName="lbtnIndex" ID="lbtnIndex"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsIndex").ToString())) %>"></i></asp:LinkButton></a>
+                                    <li style="width: 100px;">
+                                       <%# Eval("Price") %>
                                     </li>
-                                    <li style="width: 60px;" class="state">
-                                        <asp:LinkButton runat="server" CommandName="lbtnRec" ID="lbtnRec"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsRec").ToString())) %>"></i></asp:LinkButton></a>
+                                    <li style="width: 100px;">
+                                      <%# Eval("Stock") %>
                                     </li>
                                     <li style="width: 150px;"><%# Vanyin.Common.Utils.GetDate(Eval("AddTime").ToString())  %></li>
 
@@ -146,7 +145,7 @@
             <script type="text/javascript">
                 $(function () {
 
-                    SetLeftMenu("设计模版", "模版管理");
+                    SetLeftMenu("兑换商品", "商品管理");
                     $(".page").pagination(<%= pcount %>, {
                         
                         prev_text: "上一页",

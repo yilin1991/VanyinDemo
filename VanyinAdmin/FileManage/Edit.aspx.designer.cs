@@ -7,10 +7,19 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace VanyinAdmin.Template {
+namespace VanyinAdmin.FileManage {
     
     
-    public partial class index {
+    public partial class Edit {
+        
+        /// <summary>
+        /// myfrom 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlForm myfrom;
         
         /// <summary>
         /// Header 控件。
@@ -22,6 +31,15 @@ namespace VanyinAdmin.Template {
         protected global::VanyinAdmin.Controls.Header Header;
         
         /// <summary>
+        /// txtTitle 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTitle;
+        
+        /// <summary>
         /// ddlType 控件。
         /// </summary>
         /// <remarks>
@@ -31,49 +49,67 @@ namespace VanyinAdmin.Template {
         protected global::System.Web.UI.WebControls.DropDownList ddlType;
         
         /// <summary>
-        /// ddlState 控件。
+        /// txtLink 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlState;
+        protected global::System.Web.UI.WebControls.TextBox txtLink;
         
         /// <summary>
-        /// txtkey 控件。
+        /// txtImg 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtkey;
+        protected global::System.Web.UI.WebControls.TextBox txtImg;
         
         /// <summary>
-        /// btnSearch 控件。
+        /// txtSortNum 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSearch;
+        protected global::System.Web.UI.WebControls.TextBox txtSortNum;
         
         /// <summary>
-        /// btnSelectAll 控件。
+        /// ckHot 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSelectAll;
+        protected global::System.Web.UI.WebControls.CheckBox ckHot;
         
         /// <summary>
-        /// repList 控件。
+        /// ckRec 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater repList;
+        protected global::System.Web.UI.WebControls.CheckBox ckRec;
+        
+        /// <summary>
+        /// ckState 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox ckState;
+        
+        /// <summary>
+        /// btnOk 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnOk;
         
         /// <summary>
         /// Left 控件。
