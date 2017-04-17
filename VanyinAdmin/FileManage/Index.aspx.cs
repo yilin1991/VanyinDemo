@@ -24,7 +24,7 @@ namespace VanyinAdmin.FileManage
         {
             if (!IsPostBack)
             {
-
+                BindRepList();
             }
         }
 
@@ -34,6 +34,15 @@ namespace VanyinAdmin.FileManage
         /// </summary>
         void BindRepList()
         {
+            StringBuilder strWhere = new StringBuilder("1=1");
+            pagesize = 10;
+            if (!int.TryParse(Request.Params["page"], out page))
+            {
+                page = 0;
+            }
+            pcount = bll.GetRecordCount(strWhere.ToString());
+            repList.DataSource = bll.GetListByPage(strWhere.ToString(), "SortNum asc,Id asc", pagesize * page + 1, pagesize * page + pagesize);
+            repList.DataBind();
 
         }
 
@@ -44,7 +53,7 @@ namespace VanyinAdmin.FileManage
         /// <param name="e"></param>
         protected void btnSearch_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("index.aspx?type=" + ddlType.SelectedValue + "&state=" + ddlState.SelectedValue + "&key=" + txtkey.Text);
         }
 
         /// <summary>
@@ -54,7 +63,7 @@ namespace VanyinAdmin.FileManage
         /// <param name="e"></param>
         protected void btnSelectAll_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("index.aspx");
         }
 
 
@@ -65,7 +74,14 @@ namespace VanyinAdmin.FileManage
         /// <param name="e"></param>
         protected void repList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
-
+            HiddenField lbId = e.Item.FindControl("lbId") as HiddenField;
+            Vanyin.Model.Filetable model = bll.GetModel(int.Parse(lbId.Value));
+            if (e.CommandName == "lbtnState")
+            {
+                model.StateInfo = model.StateInfo == 1 ? 0 : 1;
+            }
+            bll.Update(model);
+            BindRepList();
         }
     }
 }

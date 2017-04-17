@@ -31,7 +31,7 @@
             <div class="pagemain boxsizing">
                 <div class="maptop">
                     <span>位置：</span>
-                    <a href="index.aspx">首页</a
+                    <a href="index.aspx">首页</a>
                 </div>
                 <div class="contentBox">
 
