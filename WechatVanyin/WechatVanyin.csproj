@@ -14,7 +14,7 @@
     <RootNamespace>WechatVanyin</RootNamespace>
     <AssemblyName>WechatVanyin</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -59,6 +59,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="address.html" />
+    <Content Include="bin\Maticsoft.DBUtility.dll" />
+    <Content Include="bin\Maticsoft.DBUtility.pdb" />
+    <Content Include="bin\Vanyin.BLL.dll" />
+    <Content Include="bin\Vanyin.BLL.pdb" />
+    <Content Include="bin\Vanyin.Common.dll" />
+    <Content Include="bin\Vanyin.Common.pdb" />
+    <Content Include="bin\Vanyin.DAL.dll" />
+    <Content Include="bin\Vanyin.DAL.pdb" />
+    <Content Include="bin\Vanyin.Model.dll" />
+    <Content Include="bin\Vanyin.Model.pdb" />
+    <Content Include="bin\Vanyin.Web.UI.dll" />
+    <Content Include="bin\Vanyin.Web.UI.pdb" />
+    <Content Include="bin\WechatVanyin.dll" />
+    <Content Include="bin\WechatVanyin.pdb" />
+    <Content Include="Controls\Footer.ascx" />
     <Content Include="css\address.css" />
     <Content Include="css\designtemplate.css" />
     <Content Include="css\index.css" />
@@ -69,6 +84,7 @@
     <Content Include="css\personal.css" />
     <Content Include="css\print.css" />
     <Content Include="css\style.css" />
+    <Content Include="css\swiper.min.css" />
     <Content Include="design-template.html" />
     <Content Include="design.html" />
     <Content Include="img\design\closeshowtemplate.png" />
@@ -119,23 +135,57 @@
     <Content Include="img\personal\home\hometelico.png" />
     <Content Include="img\personal\home\topimg.jpg" />
     <Content Include="img\print\arrow.png" />
+    <Content Include="index.aspx" />
     <Content Include="index.html" />
     <Content Include="integral-detailed.html" />
     <Content Include="integral-home.html" />
     <Content Include="integral-order.html" />
     <Content Include="js\jquery-1.11.1.min.js" />
+    <Content Include="js\swiper.min.js" />
     <Content Include="Login.html" />
     <Content Include="opinion.html" />
     <Content Include="order-list.html" />
     <Content Include="personal-datum.html" />
     <Content Include="personal-home.html" />
     <Content Include="print.html" />
+    <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
+    <Content Include="UplaodFileds\20170414\20170414191830833.jpg" />
+    <Content Include="UplaodFileds\20170418\20170418105535953.jpg" />
+    <Content Include="UplaodFileds\20170418\20170418171631895.png" />
+    <Content Include="UplaodFileds\20170418\20170418171712050.png" />
+    <Content Include="UplaodFileds\20170418\20170418171746042.png" />
+    <Content Include="UplaodFileds\20170418\20170418171816399.png" />
+    <Content Include="UplaodFileds\20170418\20170418171844905.png" />
+    <Content Include="UplaodFileds\20170418\20170418171910771.png" />
+    <Content Include="UplaodFileds\20170418\20170418171945330.png" />
+    <Content Include="UplaodFileds\20170418\20170418172017446.png" />
+    <Content Include="UplaodFileds\20170418\20170418172047645.png" />
+    <Content Include="UplaodFileds\20170418\20170418175310881.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Footer.ascx.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\Footer.ascx.designer.cs">
+      <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\WechatVanyin.dll.config" />
+    <Content Include="UplaodFileds\20170412\20170412140207749.xlsx" />
+    <Content Include="UplaodFileds\20170412\20170412140448956.xlsx" />
+    <Content Include="UplaodFileds\20170412\20170412140454288.xlsx" />
+    <Content Include="UplaodFileds\20170413\20170413105315676.xlsx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -145,6 +195,27 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\order\" />
+    <Folder Include="Tools\" />
+    <Folder Include="UplaodFileds\image\" />
+    <Folder Include="UplaodFileds\media\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Vanyin.BLL\Vanyin.BLL.csproj">
+      <Project>{fb95183a-d488-462c-b81d-70eb329e4bb6}</Project>
+      <Name>Vanyin.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanyin.Common\Vanyin.Common.csproj">
+      <Project>{a1b06be5-98c1-4727-a0a5-1bc958654afa}</Project>
+      <Name>Vanyin.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanyin.Model\Vanyin.Model.csproj">
+      <Project>{81b8692b-dff1-402c-b3f0-fe238dd1f9f9}</Project>
+      <Name>Vanyin.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Vanyin.Web.UI\Vanyin.Web.UI.csproj">
+      <Project>{dca80150-902a-45eb-8a8b-8f625e9b6912}</Project>
+      <Name>Vanyin.Web.UI</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -161,7 +232,9 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1254</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:1254/</IISUrl>
+          <IISUrl>http://192.168.1.115:8088/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://192.168.1.115:8088/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

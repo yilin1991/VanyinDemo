@@ -5,20 +5,18 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Text;
-namespace VanyinAdmin.FileManage
+
+
+namespace VanyinAdmin.Member
 {
     public partial class Index : Vanyin.Web.UI.ManagePage
     {
-
-
-        Vanyin.BLL.Filetable bll = new Vanyin.BLL.Filetable();
-
-        public int page;
+        Vanyin.BLL.Member bll = new Vanyin.BLL.Member();
         public int pagesize;
+        public int page;
         public int pcount;
 
         public StringBuilder strUrl = new StringBuilder();
-
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,9 +26,8 @@ namespace VanyinAdmin.FileManage
             }
         }
 
-
         /// <summary>
-        /// 绑定文件列表
+        /// 绑定会员列表
         /// </summary>
         void BindRepList()
         {
@@ -38,7 +35,7 @@ namespace VanyinAdmin.FileManage
 
             if (!string.IsNullOrEmpty(Request.Params["type"]) && !string.Equals(Request.Params["type"], "0"))
             {
-                strWhere.Append(" and MallType=" + Request.Params["type"]);
+                strWhere.Append(" and TypeId=" + Request.Params["type"]);
                 ddlType.SelectedValue = Request.Params["type"];
                 strUrl.Append("&type=" + Request.Params["type"]);
             }
@@ -60,7 +57,7 @@ namespace VanyinAdmin.FileManage
             if (!string.IsNullOrEmpty(Request.Params["key"]))
             {
 
-                strWhere.Append(" and NameInfo like '%" + Request.Params["key"] + "%'");
+                strWhere.Append(" and (NameInfo like '%" + Request.Params["key"] + "%' or Account like '%"+Request.Params["key"]+"%' or Phone='"+Request.Params["key"]+"')");
 
                 txtkey.Text = Request.Params["key"];
                 strUrl.Append("&key=" + Request.Params["key"]);
@@ -72,9 +69,8 @@ namespace VanyinAdmin.FileManage
                 page = 0;
             }
             pcount = bll.GetRecordCount(strWhere.ToString());
-            repList.DataSource = bll.GetListByPage(strWhere.ToString(), "SortNum asc,Id asc", pagesize * page + 1, pagesize * page + pagesize);
+            repList.DataSource = bll.GetListByPage(strWhere.ToString(), "AddTime desc,Id desc", pagesize * page + 1, pagesize * page + pagesize);
             repList.DataBind();
-
         }
 
         /// <summary>
@@ -87,11 +83,12 @@ namespace VanyinAdmin.FileManage
             Response.Redirect("index.aspx?type=" + ddlType.SelectedValue + "&state=" + ddlState.SelectedValue + "&key=" + txtkey.Text);
         }
 
-        /// <summary>
-        /// 显示全部
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
+
+       /// <summary>
+       /// 显示全部
+       /// </summary>
+       /// <param name="sender"></param>
+       /// <param name="e"></param>
         protected void btnSelectAll_Click(object sender, EventArgs e)
         {
             Response.Redirect("index.aspx");
@@ -99,14 +96,14 @@ namespace VanyinAdmin.FileManage
 
 
         /// <summary>
-        /// 修改属性
+        /// 修改状态
         /// </summary>
         /// <param name="source"></param>
         /// <param name="e"></param>
         protected void repList_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
             HiddenField lbId = e.Item.FindControl("lbId") as HiddenField;
-            Vanyin.Model.Filetable model = bll.GetModel(int.Parse(lbId.Value));
+            Vanyin.Model.Member model = bll.GetModel(int.Parse(lbId.Value));
             if (e.CommandName == "lbtnState")
             {
                 model.StateInfo = model.StateInfo == 1 ? 0 : 1;

@@ -16,6 +16,8 @@
 .edit_group .label_title{width: 100px;text-align: right;font-size: 13px;line-height: 30px;}
 .edit_group .controls{display: table;margin-left: 15px;display: inline-flex;align-items: center;}
 .edit_group .controls input[type=text]{border: solid 1px #E7E7E7;display: inline-block;height: 30px;padding: 0 10px;}
+.edit_group .controls input[type=password]{border: solid 1px #E7E7E7;display: inline-block;height: 30px;padding: 0 10px;}
+
 .edit_group .controls select{border: solid 1px #E7E7E7;height: 30px;padding: 0 10px;font-size: 12px;}
 .edit_group .controls select option{line-height: 25px;padding: 0 10px;}
 .edit_group .controls .inputtext100{width: 100px;}

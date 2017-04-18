@@ -339,10 +339,25 @@
     <Content Include="Login.aspx" />
     <Content Include="MallProduct\Edit.aspx" />
     <Content Include="MallProduct\Index.aspx" />
+    <Content Include="Member\Edit.aspx" />
+    <Content Include="Member\Index.aspx" />
+    <Content Include="Order\DesignOrder.aspx" />
+    <Content Include="Order\MallOrder.aspx" />
+    <Content Include="Order\PrintOrder.aspx" />
     <Content Include="Template\Edit.aspx" />
     <Content Include="Template\index.aspx" />
     <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
     <Content Include="UplaodFileds\20170414\20170414191830833.jpg" />
+    <Content Include="UplaodFileds\20170418\20170418105535953.jpg" />
+    <Content Include="UplaodFileds\20170418\20170418171631895.png" />
+    <Content Include="UplaodFileds\20170418\20170418171712050.png" />
+    <Content Include="UplaodFileds\20170418\20170418171746042.png" />
+    <Content Include="UplaodFileds\20170418\20170418171816399.png" />
+    <Content Include="UplaodFileds\20170418\20170418171844905.png" />
+    <Content Include="UplaodFileds\20170418\20170418171910771.png" />
+    <Content Include="UplaodFileds\20170418\20170418171945330.png" />
+    <Content Include="UplaodFileds\20170418\20170418172017446.png" />
+    <Content Include="UplaodFileds\20170418\20170418172047645.png" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -416,6 +431,41 @@
     <Compile Include="MallProduct\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Member\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Member\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Member\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\DesignOrder.aspx.cs">
+      <DependentUpon>DesignOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\DesignOrder.aspx.designer.cs">
+      <DependentUpon>DesignOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\MallOrder.aspx.cs">
+      <DependentUpon>MallOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\MallOrder.aspx.designer.cs">
+      <DependentUpon>MallOrder.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Order\PrintOrder.aspx.cs">
+      <DependentUpon>PrintOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order\PrintOrder.aspx.designer.cs">
+      <DependentUpon>PrintOrder.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Template\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
@@ -430,6 +480,12 @@
     </Compile>
     <Compile Include="Template\index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CheckAccount.ashx.cs">
+      <DependentUpon>CheckAccount.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\CheckPhone.ashx.cs">
+      <DependentUpon>CheckPhone.ashx</DependentUpon>
     </Compile>
     <Compile Include="Tools\Update.ashx.cs">
       <DependentUpon>Update.ashx</DependentUpon>
@@ -448,6 +504,8 @@
     <Content Include="UplaodFileds\20170412\20170412140454288.xlsx" />
     <Content Include="UplaodFileds\20170413\20170413105315676.xlsx" />
     <Content Include="Tools\upload_json.ashx" />
+    <Content Include="Tools\CheckAccount.ashx" />
+    <Content Include="Tools\CheckPhone.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

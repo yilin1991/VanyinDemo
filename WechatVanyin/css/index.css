@@ -8,15 +8,19 @@ body {
 /*首页Banner Begin*/
 
 .bannerbox {
-	display: table;
+	/*display: table;*/
 	width: 100%;
 }
 
-.bannerbox img {
+.bannerbox .swiperbanner .swiper-wrapper .swiper-slide a{display:block;width:100%;}
+
+
+.bannerbox .swiperbanner .swiper-wrapper .swiper-slide img {
 	display: block;
 	width: 100%;
-}
-
+}.bannerbox .swiperbanner{position:relative;}
+.bannerbox .swiperbanner .pagination{width:100%; position:absolute;bottom:8px;text-align:center;z-index:99999;}
+.bannerbox .swiperbanner .pagination span{display:inline-block;margin:0 3px;}
 
 /*首页Banner End*/
 

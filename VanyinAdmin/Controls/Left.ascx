@@ -37,6 +37,15 @@
                 <a href="/MallProduct/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加商品</span></a>
             </li>
         </ul>
+        <ul class="leftlist">
+            <li class="title">
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>会员管理</span></a>
+            </li>
+            <li class="leftlink">
+                <a href="/Member/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>会员管理</span></a>
+                <a href="/Member/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加会员</span></a>
+            </li>
+        </ul>
          <ul class="leftlist">
             <li class="title">
                 <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>文件管理</span></a>

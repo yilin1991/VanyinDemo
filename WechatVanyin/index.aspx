@@ -1,77 +1,75 @@
-﻿<!DOCTYPE html>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="WechatVanyin.index" %>
+
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
     <title>万印网首页</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <link rel="stylesheet" type="text/css" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" href="/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/css/index.css" />
+    <link href="/css/swiper.min.css" rel="stylesheet" />
 </head>
 
 <body>
-    <!--头部 Begin-->
-    <div id="header">
-        <p class="title">万印网</p>
-        <a class="backbtn"><img src="img/header/backico.png" /></a>
-    </div>
-    <!--头部 End-->
+
     <!--Banner Begin-->
     <div class="bannerbox">
-        <img src="img/index/indexbanner.jpg" />
+        <%--<img src="img/index/indexbanner.jpg" />--%>
+
+        <div class="swiper-container swiperbanner">
+            <div class="swiper-wrapper">
+
+                <asp:Repeater runat="server" ID="repIndexBanner">
+                    <ItemTemplate>
+                        <div class="swiper-slide">
+                            <a <%# string.IsNullOrEmpty(Eval("LinkUrl").ToString())?"":"href='"+Eval("LinkUrl")+"'" %>>
+                                <img src="<%# Eval("ImgUrl") %>" /></a>
+                        </div>
+                    </ItemTemplate>
+                </asp:Repeater>
+
+
+            </div>
+            <div class="pagination"></div>
+        </div>
+
+
     </div>
     <!--Banner End-->
     <!--印刷类别 Begin-->
     <div class="printtype">
         <ul class="maintop">
-            <li><img src="img/index/printico.png" /></li>
+            <li>
+                <img src="img/index/printico.png" /></li>
             <li>
                 <p>我要印刷</p>
             </li>
             <li>
-                <a>去印刷</a>
+                <a href="print.aspx">去印刷</a>
             </li>
         </ul>
 
         <div class="printlist">
-            <a href="#">
-                <img src="img/index/mpico.png" />
-                <p>印名片</p>
-            </a>
-            <a href="#">
-                <img src="img/index/zbico.png" />
-                <p>印纸杯</p>
-            </a>
-            <a href="#">
-                <img src="img/index/hbico.png" />
-                <p>印海报</p>
-            </a>
-            <a href="#">
-                <img src="img/index/zyico.png" />
-                <p>印折页</p>
-            </a>
-            <a href="#">
-                <img src="img/index/hcico.png" />
-                <p>印画册</p>
-            </a>
-            <a href="#">
-                <img src="img/index/tlico.png" />
-                <p>印台历</p>
-            </a>
-            <a href="#">
-                <img src="img/index/bzico.png" />
-                <p>印写真</p>
-            </a>
-            <a href="#">
-                <img src="img/index/stdico.png" />
-                <p>印手提袋</p>
-            </a>
-            <a href="#">
-                <img src="img/index/ylbico.png" />
-                <p>印易拉宝</p>
-            </a>
-            <a href="#">
-                <p>更多<br />印刷</p>
+            <asp:Repeater runat="server" ID="repTypeList">
+                <ItemTemplate>
+                    <a href="print.aspx?type=<%# Eval("Id") %>">
+                        <img src="<%#Eval("ImgUrl") %>" />
+                        <p>印<%#Eval("Title") %></p>
+                    </a>
+                </ItemTemplate>
+            </asp:Repeater>
+
+
+            <a href="print.aspx">
+                <p>
+                    更多<br />
+                    印刷
+                </p>
             </a>
         </div>
 
@@ -80,7 +78,8 @@
     <!--设计模版 Begin-->
     <div class="designbox">
         <ul class="maintop">
-            <li><img src="img/index/designico.png" /></li>
+            <li>
+                <img src="img/index/designico.png" /></li>
             <li>
                 <p>我要设计</p>
             </li>
@@ -133,7 +132,8 @@
     <!--印刷工艺 Begin-->
     <div class="technology">
         <a class="technologylist">
-            <span class="img"><img src="img/index/technologyimg1.jpg" /></span>
+            <span class="img">
+                <img src="img/index/technologyimg1.jpg" /></span>
             <p>
                 <span>精品UV工艺</span>
                 <span></span>
@@ -147,10 +147,12 @@
                 <span></span>
                 <span>实力上线印刷全面启动我们的技术全国领先。</span>
             </p>
-            <span class="img"><img src="img/index/technologyimg1.jpg" /></span>
+            <span class="img">
+                <img src="img/index/technologyimg1.jpg" /></span>
         </a>
         <a class="technologylist">
-            <span class="img"><img src="img/index/technologyimg1.jpg" /></span>
+            <span class="img">
+                <img src="img/index/technologyimg1.jpg" /></span>
             <p>
                 <span>精品UV工艺</span>
                 <span></span>
@@ -160,10 +162,22 @@
     </div>
     <!--印刷工艺 End-->
     <!--底部导航 Begin-->
-
-    
-
+    <uc1:Footer runat="server" ID="Footer" />
     <!--底部导航 End-->
+    <script src="/js/swiper.min.js"></script>
+
+    <script>
+        var myBanner = new Swiper('.swiperbanner', {
+            loop: true,
+            autoplay: 3000,
+            speed: 1000,
+            pagination: ".pagination",
+            autoplayDisableOnInteraction: false,
+            paginationType: 'custom',
+            paginationClickable: true,
+        });
+    </script>
+
 </body>
 
 </html>
