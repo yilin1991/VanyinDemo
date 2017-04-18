@@ -1,0 +1,53 @@
+﻿
+.wechatmsgbody {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 9999999;
+    opacity: 0;
+}
+
+.wechatmsgbox {
+    width: 90%;
+    display:table;
+    position:absolute;
+    left:0;
+    top:0;
+    right:0;
+    bottom:0;
+    margin:auto;
+    background-color: #fafafc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+    .wechatmsgbox p.wechatmsgtitle {
+        font-size: 105%;
+        text-align: center;
+        padding: 25px 10% 10px 10%;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .wechatmsgbox p.wechatmsgcontent {
+        font-size: 98%;
+        color: #7e7e80;
+        padding: 0 8%;
+        padding-bottom: 20px;
+        line-height: 1.7;
+        text-align: center;
+    }
+
+    .wechatmsgbox a.wechatmsgbtnOK {
+        width: 100%;
+        border-top: solid 1px #e0e0e2;
+        display: block;
+        text-align: center;
+        line-height: 2.8;
+        font-size: 100%;
+        color: #005bac;
+        letter-spacing: 5px;
+    }

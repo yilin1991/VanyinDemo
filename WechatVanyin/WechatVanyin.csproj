@@ -39,6 +39,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LitJSON, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\LitJSON.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -59,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="address.html" />
+    <Content Include="bin\LitJSON.dll" />
     <Content Include="bin\Maticsoft.DBUtility.dll" />
     <Content Include="bin\Maticsoft.DBUtility.pdb" />
     <Content Include="bin\Vanyin.BLL.dll" />
@@ -85,6 +90,7 @@
     <Content Include="css\print.css" />
     <Content Include="css\style.css" />
     <Content Include="css\swiper.min.css" />
+    <Content Include="css\weChatStyle.css" />
     <Content Include="design-template.html" />
     <Content Include="design.html" />
     <Content Include="img\design\closeshowtemplate.png" />
@@ -142,11 +148,15 @@
     <Content Include="integral-order.html" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\swiper.min.js" />
+    <Content Include="js\Validform_v5.3.2.js" />
+    <Content Include="js\weChatMsg.js" />
+    <Content Include="login.aspx" />
     <Content Include="Login.html" />
     <Content Include="opinion.html" />
     <Content Include="order-list.html" />
     <Content Include="personal-datum.html" />
     <Content Include="personal-home.html" />
+    <Content Include="print.aspx" />
     <Content Include="print.html" />
     <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
     <Content Include="UplaodFileds\20170414\20170414191830833.jpg" />
@@ -178,7 +188,27 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="print.aspx.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="print.aspx.designer.cs">
+      <DependentUpon>print.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\AddPrintOrder.ashx.cs">
+      <DependentUpon>AddPrintOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\Login.ashx.cs">
+      <DependentUpon>Login.ashx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="bin\WechatVanyin.dll.config" />
@@ -186,6 +216,8 @@
     <Content Include="UplaodFileds\20170412\20170412140448956.xlsx" />
     <Content Include="UplaodFileds\20170412\20170412140454288.xlsx" />
     <Content Include="UplaodFileds\20170413\20170413105315676.xlsx" />
+    <Content Include="Tools\AddPrintOrder.ashx" />
+    <Content Include="Tools\Login.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -195,7 +227,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="img\order\" />
-    <Folder Include="Tools\" />
     <Folder Include="UplaodFileds\image\" />
     <Folder Include="UplaodFileds\media\" />
   </ItemGroup>

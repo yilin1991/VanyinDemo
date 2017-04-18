@@ -79,7 +79,7 @@
 
                             <li style="width: 150px;">编号</li>
                             <li style="width: 250px;">标题</li>
-                            <li style="width: 100px;">所属类别</li>
+                            <li style="width: 200px;">所属类别</li>
                             <li style="width: 100px;">展示图片</li>
                             <li style="width: 60px;">状态</li>
                             <li style="width: 60px;">排序</li>
@@ -96,7 +96,7 @@
                                     </li>
                                     <li style="width: 250px;" class="headline">
                                         <a href="Edit.aspx?id=<%# Eval("Id")+strUrl.ToString()+"&page="+page %>"><%# Eval("Title") %></a></li>
-                                    <li style="width: 100px;"><%# GetCategoryName(int.Parse(Eval("TypeId").ToString())) %></li>
+                                    <li style="width: 200px;"><%# GetCategoryName(int.Parse(Eval("TypeId").ToString())) %></li>
                                     <li style="width: 100px;" class="img"><%# string.IsNullOrEmpty(Eval("ImgUrl").ToString())?"—":"<img src=\""+Eval("ImgUrl").ToString()+"\" />" %> </li>
                                     <li style="width: 60px;" class="state">
                                         <asp:LinkButton runat="server" CommandName="lbtnState" ID="lbtnState"><i class="<%# Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("StateInfo").ToString()))  %>"></i></asp:LinkButton></a></li>

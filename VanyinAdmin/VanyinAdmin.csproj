@@ -66,8 +66,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="bin\LitJSON.dll" />
     <Content Include="bin\Maticsoft.DBUtility.dll" />
     <Content Include="bin\Maticsoft.DBUtility.pdb" />
+    <Content Include="bin\NPOI.dll" />
     <Content Include="bin\Vanyin.BLL.dll" />
     <Content Include="bin\Vanyin.BLL.pdb" />
     <Content Include="bin\Vanyin.Common.dll" />
@@ -76,6 +78,8 @@
     <Content Include="bin\Vanyin.DAL.pdb" />
     <Content Include="bin\Vanyin.Model.dll" />
     <Content Include="bin\Vanyin.Model.pdb" />
+    <Content Include="bin\Vanyin.Web.UI.dll" />
+    <Content Include="bin\Vanyin.Web.UI.pdb" />
     <Content Include="bin\VanyinAdmin.dll" />
     <Content Include="bin\VanyinAdmin.pdb" />
     <Content Include="Category\Edit.aspx" />
