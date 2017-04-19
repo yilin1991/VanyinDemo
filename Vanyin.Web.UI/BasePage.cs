@@ -85,5 +85,25 @@ namespace Vanyin.Web.UI
 
         }
 
+
+        /// <summary>
+        /// 验证是否登录
+        /// </summary>
+        public void CheckLogin(string backurl)
+        {
+            if (string.IsNullOrEmpty(Vanyin.Common.Utils.GetCookie("MemberId")))
+            {
+                Vanyin.Common.Utils.WriteCookie("BackUrl", backurl);
+                Response.Redirect("Login.aspx");
+            }
+            else
+            {
+                Vanyin.Common.Utils.WriteCookie("BackUrl", "",-1440);
+            }
+
+        }
+
+
+
     }
 }

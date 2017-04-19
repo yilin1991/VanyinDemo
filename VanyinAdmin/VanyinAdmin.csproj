@@ -134,6 +134,7 @@
     <Content Include="js\jquery.message.js" />
     <Content Include="js\jquery.pagination.js" />
     <Content Include="js\jquery.public.js" />
+    <Content Include="js\urlParams.js" />
     <Content Include="js\Validform_v5.3.2.js" />
     <Content Include="kindeditor-4.1.10\asp.net\bin\LitJSON.dll" />
     <Content Include="kindeditor-4.1.10\asp.net\demo.aspx" />

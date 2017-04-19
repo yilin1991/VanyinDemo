@@ -6,30 +6,33 @@ using LitJson;
 namespace WechatVanyin.Tools
 {
     /// <summary>
-    /// AddPrintOrder 的摘要说明
+    /// AddDesignOrder 的摘要说明
     /// </summary>
-    public class AddPrintOrder : IHttpHandler
+    public class AddDesignOrder : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            Vanyin.BLL.PrintOrder bll = new Vanyin.BLL.PrintOrder();
-            Vanyin.Model.PrintOrder model = new Vanyin.Model.PrintOrder();
 
             JsonData jd = new JsonData();
 
+            Vanyin.BLL.DesignOrder bll = new Vanyin.BLL.DesignOrder();
+            Vanyin.Model.DesignOrder model = new Vanyin.Model.DesignOrder();
+
+
             model.AddTime = DateTime.Now;
-            model.Email = context.Request["txtEmail"].ToString();
+            model.DesignRequire = context.Request["txtremark"].ToString();
+            model.Email = context.Request["txtemail"].ToString();
             model.Explain = "";
+            model.IfPrint = context.Request["ckprint"].ToString()=="true"?1:0;
             model.MemberId = int.Parse(Vanyin.Common.Utils.GetCookie("MemberId"));
-            model.PrintNum = context.Request["txtNum"].ToString();
-            model.NameInfo = context.Request["txtName"].ToString();
+            model.NameInfo = context.Request["txtname"].ToString();
             model.NumId = new Vanyin.Web.UI.BasePage().GetNumId(DateTime.Now);
-            model.Phone = context.Request["txtPhone"].ToString();
-            model.Require = context.Request["txtRemark"].ToString();
+            model.Phone = context.Request["txttel"].ToString();
+            model.TypeId = int.Parse(context.Request["ddlType"].ToString());
+            model.TemplateId = int.Parse(context.Request["hidTemId"].ToString());
             model.StateInfo = 0;
-            model.TypeId = int.Parse(context.Request["ddlTypelist"].ToString());
 
             int orderId = bll.Add(model);
 
@@ -37,7 +40,7 @@ namespace WechatVanyin.Tools
             if (orderId > 0)
             {
                 jd["state"] = "success";
-                jd["orderId"] =orderId ;
+                jd["orderId"] = orderId;
             }
             else
             {

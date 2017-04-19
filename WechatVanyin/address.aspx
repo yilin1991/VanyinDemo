@@ -1,3 +1,5 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="address.aspx.cs" Inherits="WechatVanyin.address" %>
+
 <!DOCTYPE html>
 <html>
 

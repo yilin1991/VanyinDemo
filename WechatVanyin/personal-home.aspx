@@ -1,3 +1,8 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="personal-home.aspx.cs" Inherits="WechatVanyin.personal_home" %>
+
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -10,12 +15,7 @@
 	</head>
 
 	<body>
-		<!--头部 Begin-->
-		<div id="header">
-			<p class="title">万印网</p>
-			<a class="backbtn"><img src="img/header/backico.png" /></a>
-		</div>
-		<!--头部 End-->
+	
 
 		<!--个人中心 Begin-->
 
@@ -30,23 +30,23 @@
 			<div class="perhomeheader">
 				<!--头像及用户名 Begin-->
 				<a href="#"><img src="img/personal/home/headerimg.jpg" /></a>
-				<p>18621588888</p>
+				<p><%=model.Phone %></p>
 			</div>
 			<!--头像及用户名 End-->
 
 			<!--个人中心链接 Begin-->
 			<div class="perhomelink">
-				<a href="#">
+				<a href="order-list.aspx">
 					<span class="linkico"><img src="img/personal/home/homeico1.png"/></span>
 					<span class="linkname">我的订单</span>
 					<span class="linkright"><img src="img/personal/home/homerightico.png"/></span>
 				</a>
-				<a href="#">
+				<a href="personal-datum.aspx">
 					<span class="linkico"><img src="img/personal/home/homeico2.png"/></span>
 					<span class="linkname">我的资料</span>
 					<span class="linkright"><img src="img/personal/home/homerightico.png"/></span>
 				</a>
-				<a href="#">
+				<a href="integral-home.aspx">
 					<span class="linkico"><img src="img/personal/home/homeico3.png"/></span>
 					<span class="linkname">我的积分</span>
 					<span class="linknum">500分</span>
@@ -63,7 +63,7 @@
 			<div class="perhometel">
 				<span>咨询电话</span>
 				<img src="img/personal/home/hometelico.png"/>
-				<a href="#">021-50110509</a>
+				<a href="tel:021-50110509">021-50110509</a>
 			</div>
 			
 			
@@ -72,26 +72,7 @@
 		<!--个人中心 End-->
 
 		<!--底部导航 Begin-->
-
-		<div id="footer">
-			<a href="#">
-				<img src="img/footer/footerico1.png" />
-				<p>资讯小万</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico2.png" />
-				<p>我要设计</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico3.png" />
-				<p>我要印刷</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico4.png" />
-				<p>个人中心</p>
-			</a>
-		</div>
-
+        <uc1:Footer runat="server" ID="Footer" />
 		<!--底部导航 End-->
 	</body>
 

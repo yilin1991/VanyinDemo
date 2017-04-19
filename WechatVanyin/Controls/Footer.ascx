@@ -12,7 +12,7 @@
         <img src="img/footer/footerico3.png" />
         <p>我要印刷</p>
     </a>
-    <a href="integral-home.aspx">
+    <a href="personal-home.aspx">
         <img src="img/footer/footerico4.png" />
         <p>个人中心</p>
     </a>

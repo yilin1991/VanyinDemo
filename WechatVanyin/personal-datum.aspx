@@ -1,3 +1,8 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="personal-datum.aspx.cs" Inherits="WechatVanyin.personal_datum" %>
+
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -44,26 +49,7 @@
 		<!--个人资料 End-->
 
 		<!--底部导航 Begin-->
-
-		<div id="footer">
-			<a href="#">
-				<img src="img/footer/footerico1.png" />
-				<p>资讯小万</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico2.png" />
-				<p>我要设计</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico3.png" />
-				<p>我要印刷</p>
-			</a>
-			<a href="#">
-				<img src="img/footer/footerico4.png" />
-				<p>个人中心</p>
-			</a>
-		</div>
-
+        <uc1:Footer runat="server" ID="Footer" />
 		<!--底部导航 End-->
 	</body>
 

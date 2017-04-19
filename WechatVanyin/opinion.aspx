@@ -1,3 +1,8 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="opinion.aspx.cs" Inherits="WechatVanyin.opinion" %>
+
+<%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -10,13 +15,7 @@
 	</head>
 
 	<body>
-		<!--头部 Begin-->
-		<div id="header">
-			<p class="title">投诉及建议</p>
-			<a class="backbtn"><img src="img/header/backico.png" /></a>
-		</div>
-		<!--头部 End-->
-
+		
 		<!--投诉及意见 Begin-->
 
 		<div class="opinionbody">
@@ -46,6 +45,10 @@
 		</div>
 
 		<!--投诉及意见 End-->
+        
+		<!--底部导航 Begin-->
+        <uc1:Footer runat="server" ID="Footer" />
+		<!--底部导航 End-->
 
 	</body>
 

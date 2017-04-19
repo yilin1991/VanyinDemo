@@ -10,24 +10,15 @@
 namespace WechatVanyin {
     
     
-    public partial class print {
+    public partial class personal_home {
         
         /// <summary>
-        /// myForm 控件。
+        /// Footer 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm myForm;
-        
-        /// <summary>
-        /// ddlTypelist 控件。
-        /// </summary>
-        /// <remarks>
-        /// 自动生成的字段。
-        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList ddlTypelist;
+        protected global::WechatVanyin.Controls.Footer Footer;
     }
 }

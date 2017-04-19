@@ -62,7 +62,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="address.html" />
+    <Content Include="address.aspx" />
     <Content Include="bin\LitJSON.dll" />
     <Content Include="bin\Maticsoft.DBUtility.dll" />
     <Content Include="bin\Maticsoft.DBUtility.pdb" />
@@ -91,8 +91,8 @@
     <Content Include="css\style.css" />
     <Content Include="css\swiper.min.css" />
     <Content Include="css\weChatStyle.css" />
-    <Content Include="design-template.html" />
-    <Content Include="design.html" />
+    <Content Include="design-template.aspx" />
+    <Content Include="design.aspx" />
     <Content Include="img\design\closeshowtemplate.png" />
     <Content Include="img\design\collectico.png" />
     <Content Include="img\design\designtemimg.png" />
@@ -106,6 +106,7 @@
     <Content Include="img\ico\emailico.png" />
     <Content Include="img\ico\nameico.png" />
     <Content Include="img\ico\selectico1.png" />
+    <Content Include="img\ico\successico.png" />
     <Content Include="img\ico\telico.png" />
     <Content Include="img\index\bzico.png" />
     <Content Include="img\index\craftsimg1.jpg" />
@@ -142,22 +143,21 @@
     <Content Include="img\personal\home\topimg.jpg" />
     <Content Include="img\print\arrow.png" />
     <Content Include="index.aspx" />
-    <Content Include="index.html" />
-    <Content Include="integral-detailed.html" />
-    <Content Include="integral-home.html" />
-    <Content Include="integral-order.html" />
+    <Content Include="integral-detailed.aspx" />
+    <Content Include="integral-home.aspx" />
+    <Content Include="integral-order.aspx" />
     <Content Include="js\jquery-1.11.1.min.js" />
     <Content Include="js\swiper.min.js" />
+    <Content Include="js\urlParams.js" />
     <Content Include="js\Validform_v5.3.2.js" />
     <Content Include="js\weChatMsg.js" />
     <Content Include="login.aspx" />
-    <Content Include="Login.html" />
-    <Content Include="opinion.html" />
-    <Content Include="order-list.html" />
-    <Content Include="personal-datum.html" />
-    <Content Include="personal-home.html" />
+    <Content Include="opinion.aspx" />
+    <Content Include="order-list.aspx" />
+    <Content Include="OrderSuccess.aspx" />
+    <Content Include="personal-datum.aspx" />
+    <Content Include="personal-home.aspx" />
     <Content Include="print.aspx" />
-    <Content Include="print.html" />
     <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
     <Content Include="UplaodFileds\20170414\20170414191830833.jpg" />
     <Content Include="UplaodFileds\20170418\20170418105535953.jpg" />
@@ -171,15 +171,40 @@
     <Content Include="UplaodFileds\20170418\20170418172017446.png" />
     <Content Include="UplaodFileds\20170418\20170418172047645.png" />
     <Content Include="UplaodFileds\20170418\20170418175310881.jpg" />
+    <Content Include="UplaodFileds\20170419\20170419172644534.png" />
+    <Content Include="UplaodFileds\20170419\2017041917273716.jpg" />
+    <Content Include="UplaodFileds\20170419\2017041917273720.jpg" />
+    <Content Include="UplaodFileds\20170419\2017041917273727.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="address.aspx.cs">
+      <DependentUpon>address.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="address.aspx.designer.cs">
+      <DependentUpon>address.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Controls\Footer.ascx.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Controls\Footer.ascx.designer.cs">
       <DependentUpon>Footer.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="design-template.aspx.cs">
+      <DependentUpon>design-template.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="design-template.aspx.designer.cs">
+      <DependentUpon>design-template.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="design.aspx.cs">
+      <DependentUpon>design.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="design.aspx.designer.cs">
+      <DependentUpon>design.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>
@@ -188,12 +213,68 @@
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="integral-detailed.aspx.cs">
+      <DependentUpon>integral-detailed.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="integral-detailed.aspx.designer.cs">
+      <DependentUpon>integral-detailed.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="integral-home.aspx.cs">
+      <DependentUpon>integral-home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="integral-home.aspx.designer.cs">
+      <DependentUpon>integral-home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="integral-order.aspx.cs">
+      <DependentUpon>integral-order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="integral-order.aspx.designer.cs">
+      <DependentUpon>integral-order.aspx</DependentUpon>
+    </Compile>
     <Compile Include="login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="opinion.aspx.cs">
+      <DependentUpon>opinion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="opinion.aspx.designer.cs">
+      <DependentUpon>opinion.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="order-list.aspx.cs">
+      <DependentUpon>order-list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="order-list.aspx.designer.cs">
+      <DependentUpon>order-list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="OrderSuccess.aspx.designer.cs">
+      <DependentUpon>OrderSuccess.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="personal-datum.aspx.cs">
+      <DependentUpon>personal-datum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="personal-datum.aspx.designer.cs">
+      <DependentUpon>personal-datum.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="personal-home.aspx.cs">
+      <DependentUpon>personal-home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="personal-home.aspx.designer.cs">
+      <DependentUpon>personal-home.aspx</DependentUpon>
     </Compile>
     <Compile Include="print.aspx.cs">
       <DependentUpon>print.aspx</DependentUpon>
@@ -203,8 +284,14 @@
       <DependentUpon>print.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\AddDesignOrder.ashx.cs">
+      <DependentUpon>AddDesignOrder.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\AddPrintOrder.ashx.cs">
       <DependentUpon>AddPrintOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\GetTemplateDetail.ashx.cs">
+      <DependentUpon>GetTemplateDetail.ashx</DependentUpon>
     </Compile>
     <Compile Include="Tools\Login.ashx.cs">
       <DependentUpon>Login.ashx</DependentUpon>
@@ -218,6 +305,8 @@
     <Content Include="UplaodFileds\20170413\20170413105315676.xlsx" />
     <Content Include="Tools\AddPrintOrder.ashx" />
     <Content Include="Tools\Login.ashx" />
+    <Content Include="Tools\GetTemplateDetail.ashx" />
+    <Content Include="Tools\AddDesignOrder.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

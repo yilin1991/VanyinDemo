@@ -46,9 +46,6 @@ namespace WechatVanyin.Tools
                 jd["state"] = "error";
                 jd["msg"] = "用户名或密码输入不正确，请重新输入！";
             }
-
-
-
             context.Response.Write(jd.ToJson());
         }
 

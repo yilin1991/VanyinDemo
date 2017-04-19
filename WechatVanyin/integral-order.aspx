@@ -1,3 +1,6 @@
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="integral-order.aspx.cs" Inherits="WechatVanyin.integral_order" %>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -10,13 +13,6 @@
 	</head>
 
 	<body>
-		<!--头部 Begin-->
-		<div id="header">
-			<p class="title">万印网</p>
-			<a class="backbtn"><img src="img/header/backico.png" /></a>
-		</div>
-		<!--头部 End-->
-		
 		<!--积分订单确认 Begin-->
 		<div class="integralorder">
 			
