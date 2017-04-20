@@ -1,6 +1,6 @@
 body{background-color: #c0eaed;position: relative;}
 
-.loginbox{width: 90vw; display: table; background-color: #fff;position: fixed;left: 0;top: 0;right: 0;bottom: 0;margin: auto;border-radius: 10px;}
+.loginbox{width: 90vw; display: table; background-color: #fff;border-radius: 10px;margin-top:30%;margin-left:5vw;}
 .loginbox .title{text-align: center;font-size: 1.8em;padding-top: 25px;color: #303030;letter-spacing: 0.4em;}
 
 
@@ -19,5 +19,7 @@ body{background-color: #c0eaed;position: relative;}
 
 .loginbox .input_group a.bthyzm{display: block; width: 21vw;background-color: #b9b9b9;height: 32px;margin-left: 2vw;border-radius: 3px;line-height: 32px;color: #FFFFFF;font-size: 0.8em;text-align: center;}
 
-.loginbox .btnsubmit{color: #FFFFFF;background-color: #17b4bb;appearance: none;-webkit-appearance: none;-moz-appearance: none;width: 40vw;margin-left: 25vw;height: 45px;font-size: 1.3em;margin-top: 20px;margin-bottom: 35px;border: none;letter-spacing: 0.3em;}
+.loginbox .btnsubmit{color: #FFFFFF;background-color: #17b4bb;appearance: none;-webkit-appearance: none;-moz-appearance: none;width: 40vw;margin-left: 25vw;height: 45px;font-size: 1.3em;margin-top: 20px;margin-bottom: 10px;border: none;letter-spacing: 0.3em;}
 
+.registerbtn{width:100%; text-align:center;margin-bottom:35px;}
+.registerbtn a{color:#808080;}

@@ -1,4 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login.aspx.cs" Inherits="WechatVanyin.login" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="register.aspx.cs" Inherits="WechatVanyin.register" %>
+
 
 <%@ Register Src="~/Controls/Footer.ascx" TagPrefix="uc1" TagName="Footer" %>
 <!DOCTYPE html>
@@ -14,26 +15,19 @@
 </head>
 
 <body>
-    <form id="myForm" runat="server" method="post" action="/Tools/Login.ashx" enctype="multipart/form-data">
+    <form id="myForm" runat="server" method="post" action="/Tools/Register.ashx" enctype="multipart/form-data">
         <!--登录窗口 Begin-->
         <div class="loginbox">
-            <p class="title">登录</p>
+            <p class="title">注册</p>
 
             <div class="input_group">
                 <div class="inputico">
                     <img src="img/login/phoneico.png" />
                 </div>
                 <span class="inputline"></span>
-                <input type="text" name="txtAccount" class="inputtext" id="txtAccount" placeholder="用户名/手机号" datatype="*" nullmsg="请输入用户名或手机号！" errormsg="帐号不能为空！" />
+                <input type="text" name="txtAccount" class="inputtext" id="txtAccount" placeholder="手机号" ajaxurl="/Tools/CheckPhone.ashx" datatype="m" nullmsg="请输入手机号！" errormsg="请输入正确的手机号码 ！" />
             </div>
-            <div class="input_group">
-                <div class="inputico">
-                    <img src="img/login/phoneico.png" />
-                </div>
-                <span class="inputline"></span>
-                <input type="password" name="txtPassword" class="inputtext" id="txtPassword" placeholder="请输入密码" datatype="*" nullmsg="请输入用户名或手机号！" errormsg="密码不能为空！" />
-            </div>
-            <%--<div class="input_group">
+           <%-- <div class="input_group">
 				<div class="inputico">
 					<img src="img/login/phoneico.png" />
 				</div>
@@ -41,10 +35,24 @@
 				<input type="text" name="txtname" class="inputyzm" id="txtname" placeholder="请输入手机号" />
 				<a class="bthyzm">获取验证码</a>
 			</div>--%>
+            <div class="input_group">
+                <div class="inputico">
+                    <img src="img/login/phoneico.png" />
+                </div>
+                <span class="inputline"></span>
+                <input type="password" name="txtPassword" class="inputtext" id="txtPassword" placeholder="请输入密码" datatype="password" nullmsg="密码不能为空！" errormsg="请输入正确的密码，密码最少包含字母、数字和特殊符号中的两种6-16字符！" />
+            </div>
+            <div class="input_group">
+                <div class="inputico">
+                    <img src="img/login/phoneico.png" />
+                </div>
+                <span class="inputline"></span>
+                <input type="password" name="txtRePassword" class="inputtext" id="txtRePassword" placeholder="请确认您的密码" datatype="*" recheck="txtPassword" nullmsg="请确认您的密码！" errormsg="两次密码输入不一致！" />
+            </div>
 
-            <input type="submit" id="btnLogin" class="btnsubmit" value="登录" />
+            <input type="submit" id="btnLogin" class="btnsubmit" value="注册" />
             <div class="registerbtn">
-                <a href="register.aspx">免费注册</a>
+                <a href="login.aspx">已有帐号？去登录</a>
             </div>
         </div>
         <!--登录窗口 End-->
@@ -65,13 +73,16 @@
                         }
                     },
                     postonce: true,
+                    datatype: {
+                       
+                        "password": /^((?=.*[a-z])(?=.*\d)|(?=[a-z])(?=.*[#@!~%^&*])|(?=.*\d)(?=.*[#@!~%^&*]))[a-z\d#@!~%^&*]{6,16}$/
 
+                    },
                     callback: function (data) {
                         if (data.state == "error") {
-                            wechatMsg("登录提示信息", data.msg);
+                            wechatMsg("注册提示信息", data.msg);
                         }
-                        else {
-                            wechatMsg("登录提示信息", "登录成功");
+                        else {                         
                             if (data.backurl != "") {
                                 location.href = data.backurl;
                             }
@@ -90,3 +101,4 @@
 </body>
 
 </html>
+

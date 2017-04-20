@@ -28,7 +28,7 @@
                     <ItemTemplate>
                         <div class="swiper-slide">
                             <a <%# string.IsNullOrEmpty(Eval("LinkUrl").ToString())?"":"href='"+Eval("LinkUrl")+"'" %>>
-                                <img src="<%# Eval("ImgUrl") %>" /></a>
+                                <img src="<%# GetFileServer(10000)+ Eval("ImgUrl") %>" /></a>
                         </div>
                     </ItemTemplate>
                 </asp:Repeater>
@@ -58,7 +58,7 @@
             <asp:Repeater runat="server" ID="repTypeList">
                 <ItemTemplate>
                     <a href="print.aspx?type=<%# Eval("Id") %>">
-                        <img src="<%#Eval("ImgUrl") %>" />
+                        <img src="<%#GetFileServer(10000)+Eval("ImgUrl") %>" />
                         <p>印<%#Eval("Title") %></p>
                     </a>
                 </ItemTemplate>

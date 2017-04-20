@@ -16,8 +16,6 @@ namespace Vanyin.Web.UI
         public void BindddlType(int PID, DropDownList ddl, bool state = false)
         {
 
-
-
             Vanyin.BLL.Category bll = new BLL.Category();
             Model.Category model = new Model.Category();
 
@@ -103,6 +101,51 @@ namespace Vanyin.Web.UI
 
         }
 
+
+        /// <summary>
+        /// 获取设计和印刷订单状态
+        /// </summary>
+        /// <returns></returns>
+        public string GetStateName(string state)
+        {
+            string strStateName = "";
+
+            switch (state)
+            {
+                case "0":
+                    strStateName = "待确认";
+                    break;
+                case "1":
+                    strStateName = "设计中";
+                    break;
+                case "2":
+                    strStateName = "配送中";
+                    break;
+                case "3":
+                    strStateName = "已完成";
+                    break;
+
+                case "5":
+                    strStateName = "已取消";
+                    break;
+            }
+
+            return strStateName;
+
+        }
+
+
+        /// <summary>
+        /// 获取文件服务器地址
+        /// </summary>
+        /// <param name="sid"></param>
+        /// <returns></returns>
+        public string GetFileServer(int sid)
+        {
+            Vanyin.BLL.SystemInfo bll = new BLL.SystemInfo();
+            Vanyin.Model.SystemInfo model = bll.GetModel(sid);
+            return model.FileServer;
+        }
 
 
     }

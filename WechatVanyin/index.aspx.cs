@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace WechatVanyin
 {
-    public partial class index : System.Web.UI.Page
+    public partial class index : Vanyin.Web.UI.BasePage
     {
         protected void Page_Load(object sender, EventArgs e)
         {

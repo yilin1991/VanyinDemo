@@ -14,7 +14,7 @@
     <RootNamespace>VanyinAdmin</RootNamespace>
     <AssemblyName>VanyinAdmin</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -349,6 +349,8 @@
     <Content Include="Order\DesignOrder.aspx" />
     <Content Include="Order\MallOrder.aspx" />
     <Content Include="Order\PrintOrder.aspx" />
+    <Content Include="SystemInfo\Edit.aspx" />
+    <Content Include="SystemInfo\Index.aspx" />
     <Content Include="Template\Edit.aspx" />
     <Content Include="Template\index.aspx" />
     <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
@@ -472,6 +474,20 @@
       <DependentUpon>PrintOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SystemInfo\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SystemInfo\Index.aspx.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SystemInfo\Index.aspx.designer.cs">
+      <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -555,7 +571,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65390</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:65390/</IISUrl>
+          <IISUrl>http://192.168.1.115:8087/VanyinAdmin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

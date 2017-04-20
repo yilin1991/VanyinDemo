@@ -25,7 +25,7 @@
                 <ItemTemplate>
                     <div class="templateli">
                         <div class="templateimg">
-                            <img src="<%# Eval("ImgUrl") %>" />
+                            <img src="<%#GetFileServer(10000)+ Eval("ImgUrl") %>" />
                             <input type="hidden" id="hidTemId" value="<%# Eval("Id") %>" />
                         </div>
                         <div class="templatetext">

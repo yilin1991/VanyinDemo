@@ -14,6 +14,8 @@ namespace WechatVanyin
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            CheckLogin("design.aspx");
+
             if (!IsPostBack)
             {
                 BindDesignType();

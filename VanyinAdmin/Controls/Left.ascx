@@ -55,6 +55,15 @@
                 <a href="/FileManage/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加文件</span></a>
             </li>
         </ul>
+        <ul class="leftlist">
+            <li class="title">
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>系统管理</span></a>
+            </li>
+            <li class="leftlink">
+                <a href="/SystemInfo/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>系统设置</span></a>
+                <a href="/SystemInfo/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加配置</span></a>
+            </li>
+        </ul>
     </div>
 
 </div>

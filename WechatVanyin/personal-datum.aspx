@@ -15,36 +15,34 @@
 	</head>
 
 	<body class="datum">
-		<!--头部 Begin-->
-		<div id="header">
-			<p class="title">万印网</p>
-			<a class="backbtn"><img src="img/header/backico.png" /></a>
-		</div>
-		<!--头部 End-->
+	
 
 		<!--个人资料 Begin-->
 
 		<div class="datumbox">
 
 			<div class="datumlist">
-				<span>用户名</span><span>15000331415</span>
+				<span>用户名</span><span><%= model.Account %></span>
 			</div>
 			<div class="datumlist">
-				<span>性别</span><span>未设置</span>
+				<span>性别</span><span><%= model.Sex==0?"男":"女" %></span>
 			</div>
 			<div class="datumlist">
-				<span>手机号</span><span>15000331415</span>
+				<span>手机号</span><span><%= model.Phone %></span>
 			</div>
 			<div class="datumlist">
-				<span>邮箱</span><span>未设置</span>
+				<span>邮箱</span><span><%= string.IsNullOrEmpty( model.Email)?"未设置":model.Email %></span>
 			</div>
 			<div class="datumlist">
-				<span>收货地址</span><span><img src="img/personal/home/homerightico.png"/></span>
+				<a href="address.aspx"><span>收货地址</span><span><img src="img/personal/home/homerightico.png"/></span></a>
 			</div>
 
 			
 			
+
 		</div>
+
+        <a href="/Tools/QuitLogin.ashx" class="quitlogin">退出登录</a>
 
 		<!--个人资料 End-->
 

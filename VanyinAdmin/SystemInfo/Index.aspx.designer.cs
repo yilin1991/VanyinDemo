@@ -7,27 +7,36 @@
 // </自动生成>
 //------------------------------------------------------------------------------
 
-namespace WechatVanyin {
+namespace VanyinAdmin.SystemInfo {
     
     
-    public partial class order_list {
+    public partial class Index {
         
         /// <summary>
-        /// RepOrderList 控件。
+        /// Header 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Repeater RepOrderList;
+        protected global::VanyinAdmin.Controls.Header Header;
         
         /// <summary>
-        /// Footer 控件。
+        /// repList 控件。
         /// </summary>
         /// <remarks>
         /// 自动生成的字段。
         /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
         /// </remarks>
-        protected global::WechatVanyin.Controls.Footer Footer;
+        protected global::System.Web.UI.WebControls.Repeater repList;
+        
+        /// <summary>
+        /// Left 控件。
+        /// </summary>
+        /// <remarks>
+        /// 自动生成的字段。
+        /// 若要进行修改，请将字段声明从设计器文件移到代码隐藏文件。
+        /// </remarks>
+        protected global::VanyinAdmin.Controls.Left Left;
     }
 }
