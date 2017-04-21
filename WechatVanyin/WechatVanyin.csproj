@@ -95,6 +95,7 @@
     <Content Include="design-template.aspx" />
     <Content Include="design.aspx" />
     <Content Include="DesignOrderDetail.aspx" />
+    <Content Include="EditAddress.aspx" />
     <Content Include="img\design\closeshowtemplate.png" />
     <Content Include="img\design\collectico.png" />
     <Content Include="img\design\designtemimg.png" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="DesignOrderDetail.aspx.designer.cs">
       <DependentUpon>DesignOrderDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EditAddress.aspx.cs">
+      <DependentUpon>EditAddress.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="EditAddress.aspx.designer.cs">
+      <DependentUpon>EditAddress.aspx</DependentUpon>
     </Compile>
     <Compile Include="index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

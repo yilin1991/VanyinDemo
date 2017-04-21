@@ -30,7 +30,7 @@
                     <ul class="addressremark">
                         <li><span>张三</span><span>18653588581</span></li>
                         <li>
-                            <p>上海市浦东新区潍坊新村街道北张家浜路88 号左岸创意园B座402</p>
+                            <p>上海市浦东新区潍坊新村街道北张家浜路88号左岸创意园B座402</p>
                         </li>
                     </ul>
                     <div class="addressedit">

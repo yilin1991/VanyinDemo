@@ -53,6 +53,8 @@ namespace Vanyin.Model
 			set{ _id=value;}
 			get{return _id;}
 		}
+        
+
 		/// <summary>
 		/// 
 		/// </summary>
@@ -141,10 +143,12 @@ namespace Vanyin.Model
 			set{ _imgurl=value;}
 			get{return _imgurl;}
 		}
-		/// <summary>
-		/// 
-		/// </summary>
-		public string Tools
+
+        public string IndexImg { set; get; }
+        /// <summary>
+        /// 
+        /// </summary>
+        public string Tools
 		{
 			set{ _tools=value;}
 			get{return _tools;}

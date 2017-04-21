@@ -35,6 +35,7 @@ namespace VanyinAdmin.Template
             txtDesignTools.Text = model.Tools;
             txtDetailRemark.Text = model.DetailRemark;
             txtImg.Text = model.ImgUrl;
+            txtIndexImg.Text = model.IndexImg;
             txtKey.Text = model.StrKey;
             txtPrice.Text = model.Price;
             txtPrintExplain.Text = model.PrintRemark;
@@ -77,7 +78,7 @@ namespace VanyinAdmin.Template
             model.IsHot = ckHot.Checked ? 1 : 0;
             model.IsIndex = ckIndex.Checked ? 1 : 0;
             model.IsRec = ckRec.Checked ? 1 : 0;
-
+            model.IndexImg = txtIndexImg.Text;
             model.Price = txtPrice.Text;
             model.PrintRemark = txtPrintExplain.Text;
             model.SortNum = int.Parse(txtSortNum.Text);

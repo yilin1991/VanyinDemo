@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using System.Text;
 namespace WechatVanyin
 {
     public partial class design_template : Vanyin.Web.UI.BasePage
@@ -39,6 +39,22 @@ namespace WechatVanyin
         }
 
 
+
+        public string GetTemplateKey(string strkey)
+        {
+            StringBuilder strHtml = new StringBuilder();
+
+            string[] strKeylist = strkey.Split('|');
+            for (int i = 0; i < strKeylist.Length; i++)
+            {
+                strHtml.Append("<span>");
+                strHtml.Append(strKeylist[i]);
+                strHtml.Append("</span>");
+            }
+
+            return strHtml.ToString();
+
+        }
 
 
 

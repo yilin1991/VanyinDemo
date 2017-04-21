@@ -84,17 +84,17 @@
                 <p>我要设计</p>
             </li>
             <li>
-                <a>去设计</a>
+                <a href="print.aspx">去设计</a>
             </li>
         </ul>
 
         <div class="designlist">
             <div class="designtem1">
                 <a href="#">
-                    <img src="img/index/designimg1.png" />
+                    <img src="<%= GetFileServer(10000)+modelTemplate[0].IndexImg %>" />
                     <div class="name">
-                        <p>绿色科技感名片模板</p>
-                        <p><span>100元</span>/款</p>
+                        <p><%= modelTemplate[0].Title %></p>
+                        <p><%= modelTemplate[0].Price %></p>
                     </div>
                 </a>
 
@@ -103,25 +103,25 @@
 
                 <div class="designtem2left">
                     <a href="#">
-                        <img src="img/index/designimg1.png" />
-                        <div class="name">
-                            <p>绿色科技感名片模板</p>
-                            <p><span>100元</span>/款</p>
-                        </div>
-                    </a>
-                    <a href="#">
-                        <img src="img/index/designimg1.png" />
-                        <div class="name">
-                            <p>绿色科技感名片模板</p>
-                            <p><span>100元</span>/款</p>
-                        </div>
-                    </a>
+                    <img src="<%= GetFileServer(10000)+modelTemplate[1].IndexImg %>" />
+                    <div class="name">
+                        <p><%= modelTemplate[1].Title %></p>
+                        <p><%= modelTemplate[1].Price %></p>
+                    </div>
+                </a>
+                     <a href="#">
+                    <img src="<%= GetFileServer(10000)+modelTemplate[2].IndexImg %>" />
+                    <div class="name">
+                        <p><%= modelTemplate[2].Title %></p>
+                        <p><%= modelTemplate[2].Price %></p>
+                    </div>
+                </a>
                 </div>
                 <div class="designtem2right">
                     <a href="#" class="rightbox">
-                        <img src="img/index/designimg1.png" />
-                        <p>绿色科技感名片模板</p>
-                        <p><span>100元</span>/款</p>
+                        <img src="<%= GetFileServer(10000)+modelTemplate[3].IndexImg %>" />
+                         <p><%= modelTemplate[3].Title %></p>
+                        <p><%= modelTemplate[3].Price %></p>
                     </a>
 
                 </div>

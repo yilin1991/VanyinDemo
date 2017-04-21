@@ -62,9 +62,9 @@ namespace Vanyin.DAL
 		{
 			StringBuilder strSql=new StringBuilder();
 			strSql.Append("insert into tb_DesignTemplate(");
-			strSql.Append("Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime)");
+			strSql.Append("Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime,IndexImg)");
 			strSql.Append(" values (");
-			strSql.Append("@Num,@Title,@SubTitle,@TypeId,@StrKey,@Price,@Cycle,@DesignRemark,@PrintRemark,@DetailRemark,@ImgUrl,@Tools,@SortNum,@StateInfo,@IsHot,@IsIndex,@IsRec,@AddTime)");
+			strSql.Append("@Num,@Title,@SubTitle,@TypeId,@StrKey,@Price,@Cycle,@DesignRemark,@PrintRemark,@DetailRemark,@ImgUrl,@Tools,@SortNum,@StateInfo,@IsHot,@IsIndex,@IsRec,@AddTime,@IndexImg)");
 			strSql.Append(";select @@IDENTITY");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Num", SqlDbType.NVarChar,50),
@@ -84,7 +84,9 @@ namespace Vanyin.DAL
 					new SqlParameter("@IsHot", SqlDbType.Int,4),
 					new SqlParameter("@IsIndex", SqlDbType.Int,4),
 					new SqlParameter("@IsRec", SqlDbType.Int,4),
-					new SqlParameter("@AddTime", SqlDbType.DateTime)};
+					new SqlParameter("@AddTime", SqlDbType.DateTime),
+                    new SqlParameter("@IndexImg",SqlDbType.NVarChar,200)
+            };
 			parameters[0].Value = model.Num;
 			parameters[1].Value = model.Title;
 			parameters[2].Value = model.SubTitle;
@@ -103,7 +105,7 @@ namespace Vanyin.DAL
 			parameters[15].Value = model.IsIndex;
 			parameters[16].Value = model.IsRec;
 			parameters[17].Value = model.AddTime;
-
+            parameters[18].Value = model.IndexImg;
 			object obj = DbHelperSQL.GetSingle(strSql.ToString(),parameters);
 			if (obj == null)
 			{
@@ -138,7 +140,7 @@ namespace Vanyin.DAL
 			strSql.Append("IsHot=@IsHot,");
 			strSql.Append("IsIndex=@IsIndex,");
 			strSql.Append("IsRec=@IsRec,");
-			strSql.Append("AddTime=@AddTime");
+			strSql.Append("AddTime=@AddTime,IndexImg=@IndexImg");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Num", SqlDbType.NVarChar,50),
@@ -159,6 +161,7 @@ namespace Vanyin.DAL
 					new SqlParameter("@IsIndex", SqlDbType.Int,4),
 					new SqlParameter("@IsRec", SqlDbType.Int,4),
 					new SqlParameter("@AddTime", SqlDbType.DateTime),
+                    new SqlParameter("@IndexImg",SqlDbType.NVarChar,200),
 					new SqlParameter("@Id", SqlDbType.Int,4)};
 			parameters[0].Value = model.Num;
 			parameters[1].Value = model.Title;
@@ -178,7 +181,8 @@ namespace Vanyin.DAL
 			parameters[15].Value = model.IsIndex;
 			parameters[16].Value = model.IsRec;
 			parameters[17].Value = model.AddTime;
-			parameters[18].Value = model.Id;
+            parameters[18].Value = model.IndexImg;
+            parameters[19].Value = model.Id;
 
 			int rows=DbHelperSQL.ExecuteSql(strSql.ToString(),parameters);
 			if (rows > 0)
@@ -242,7 +246,7 @@ namespace Vanyin.DAL
 		{
 			
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select  top 1 Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime from tb_DesignTemplate ");
+			strSql.Append("select  top 1 Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime,IndexImg from tb_DesignTemplate ");
 			strSql.Append(" where Id=@Id");
 			SqlParameter[] parameters = {
 					new SqlParameter("@Id", SqlDbType.Int,4)
@@ -318,7 +322,11 @@ namespace Vanyin.DAL
 				{
 					model.ImgUrl=row["ImgUrl"].ToString();
 				}
-				if(row["Tools"]!=null)
+                if (row["IndexImg"] != null)
+                {
+                    model.IndexImg = row["IndexImg"].ToString();
+                }
+                if (row["Tools"]!=null)
 				{
 					model.Tools=row["Tools"].ToString();
 				}
@@ -356,7 +364,7 @@ namespace Vanyin.DAL
 		public DataSet GetList(string strWhere)
 		{
 			StringBuilder strSql=new StringBuilder();
-			strSql.Append("select Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime ");
+			strSql.Append("select Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime,IndexImg ");
 			strSql.Append(" FROM tb_DesignTemplate ");
 			if(strWhere.Trim()!="")
 			{
@@ -376,7 +384,7 @@ namespace Vanyin.DAL
 			{
 				strSql.Append(" top "+Top.ToString());
 			}
-			strSql.Append(" Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime ");
+			strSql.Append(" Id,Num,Title,SubTitle,TypeId,StrKey,Price,Cycle,DesignRemark,PrintRemark,DetailRemark,ImgUrl,Tools,SortNum,StateInfo,IsHot,IsIndex,IsRec,AddTime,IndexImg ");
 			strSql.Append(" FROM tb_DesignTemplate ");
 			if(strWhere.Trim()!="")
 			{

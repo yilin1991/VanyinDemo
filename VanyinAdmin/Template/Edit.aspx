@@ -118,6 +118,19 @@
                             </div>
                         </div>
                         <div class="edit_group">
+                            <label class="label_title">首页展示图片</label>
+
+                            <div class="controls ">
+                                <ul class="filebox">
+                                    <li class="txtfilename">
+                                        <asp:TextBox runat="server" ID="txtIndexImg" ReadOnly="false" CssClass="inputWidth2 inputtext400 "></asp:TextBox></li>
+                                    <li class="btnfilea"><a href="javascript:void(0)" onclick="btnfileaclick($(this))" class="btnfilebtn">上传图片</a></li>
+                                    <li class="fileinput">
+                                        <input type="file" name="fileuploadico1" id="fileuploadico1" onchange="fileonchange($(this),'myfrom')" /></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="edit_group">
                             <label class="label_title">设计说明</label>
                             <div class="controls">
                                 <asp:TextBox runat="server" ID="txtDesignExplain" TextMode="MultiLine" Height="500" CssClass="inputtext800" ></asp:TextBox>

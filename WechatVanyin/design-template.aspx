@@ -31,10 +31,7 @@
                         <div class="templatetext">
                             <p><%#Eval("Title") %></p>
                             <p>
-                                <span>高端</span>
-                                <span>直角</span>
-                                <span>圆角</span>
-                                <span>企业</span>
+                               <%# GetTemplateKey(Eval("StrKey").ToString()) %>
                             </p>
                         </div>
                     </div>

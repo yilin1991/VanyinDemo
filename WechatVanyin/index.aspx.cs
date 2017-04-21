@@ -9,13 +9,18 @@ namespace WechatVanyin
 {
     public partial class index : Vanyin.Web.UI.BasePage
     {
+        Vanyin.BLL.DesignTemplate bllTemplate = new Vanyin.BLL.DesignTemplate();
+      public  List<Vanyin.Model.DesignTemplate> modelTemplate = new List<Vanyin.Model.DesignTemplate>();
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
                 BindIndexBanner();
                 BindRepType();
-                
+                BindRecTemplate();
             }
         }
 
@@ -38,6 +43,15 @@ namespace WechatVanyin
 
             repTypeList.DataSource = bll.GetList(9,"ParentId=10002 and StateInfo=1","SortNum asc");
             repTypeList.DataBind();
+        }
+
+
+        /// <summary>
+        /// 绑定推荐模版
+        /// </summary>
+        void BindRecTemplate()
+        {
+           modelTemplate = bllTemplate.GetModelList("IsIndex=1 and StateInfo=1");
         }
 
     }

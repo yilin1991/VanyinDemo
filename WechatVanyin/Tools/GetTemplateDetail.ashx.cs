@@ -22,7 +22,7 @@ namespace WechatVanyin.Tools
 
             Vanyin.Model.DesignTemplate model = bll.GetModel(int.Parse(temId));
 
-            jd["imgurl"] = model.ImgUrl;
+            jd["imgurl"] = new Vanyin.Web.UI.BasePage().GetFileServer(10000) + model.ImgUrl;
             jd["title"] = model.Title;
             
 
