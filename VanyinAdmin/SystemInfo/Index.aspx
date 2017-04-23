@@ -66,8 +66,8 @@
                                 <ul>
                                     <li style="width: 40px;">
                                         <input type="checkbox" name="" id="" value="" /></li>
-                                    <li style="width: 250px;"><%# Eval("Title") %>
-                                        <asp:HiddenField runat="server" ID="lbId" Value='<%# Eval("Id") %>' />
+                                    <li style="width: 250px;"><a href="Edit.aspx?id=<%#Eval("Id") %>"> <%# Eval("Title") %>
+                                        <asp:HiddenField runat="server" ID="lbId" Value='<%# Eval("Id") %>' /></a>
                                     </li>
 
                                     <li style="width: 200px;">

@@ -351,6 +351,8 @@
     <Content Include="Order\PrintOrder.aspx" />
     <Content Include="SystemInfo\Edit.aspx" />
     <Content Include="SystemInfo\Index.aspx" />
+    <Content Include="Technology\Edit.aspx" />
+    <Content Include="Technology\index.aspx" />
     <Content Include="Template\Edit.aspx" />
     <Content Include="Template\index.aspx" />
     <Content Include="UplaodFileds\20170414\20170414165439852.jpg" />
@@ -488,6 +490,20 @@
     <Compile Include="SystemInfo\Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Technology\Edit.aspx.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technology\Edit.aspx.designer.cs">
+      <DependentUpon>Edit.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Technology\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Technology\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Template\Edit.aspx.cs">
       <DependentUpon>Edit.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -508,6 +524,9 @@
     <Compile Include="Tools\CheckPhone.ashx.cs">
       <DependentUpon>CheckPhone.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\GetCity.ashx.cs">
+      <DependentUpon>GetCity.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\Update.ashx.cs">
       <DependentUpon>Update.ashx</DependentUpon>
     </Compile>
@@ -527,6 +546,7 @@
     <Content Include="Tools\upload_json.ashx" />
     <Content Include="Tools\CheckAccount.ashx" />
     <Content Include="Tools\CheckPhone.ashx" />
+    <Content Include="Tools\GetCity.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -571,7 +591,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65390</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.1.115:8087/VanyinAdmin</IISUrl>
+          <IISUrl>http://192.168.0.5:8088/VanyinAdmin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

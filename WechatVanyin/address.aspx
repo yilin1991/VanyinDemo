@@ -12,14 +12,6 @@
 </head>
 
 <body class="datum">
-    <!--头部 Begin-->
-    <div id="header">
-        <p class="title">万印网</p>
-        <a class="backbtn">
-            <img src="img/header/backico.png" /></a>
-    </div>
-    <!--头部 End-->
-
     <!--收货地址 Begin-->
     <div class="address">
         <p>管理收货地址</p>
@@ -28,14 +20,14 @@
             <ItemTemplate>
                 <div class="addresslist">
                     <ul class="addressremark">
-                        <li><span>张三</span><span>18653588581</span></li>
+                        <li><span><%# Eval("Name") %></span><span><%# Eval("Phone") %></span></li>
                         <li>
-                            <p>上海市浦东新区潍坊新村街道北张家浜路88号左岸创意园B座402</p>
+                            <p><%# GetCityName(Eval("City").ToString())+Eval("AddressInfo") %></p>
                         </li>
                     </ul>
                     <div class="addressedit">
-                        <a href="#">删除</a>
-                        <a href="#">编辑</a>
+                        <%--<a href="#">删除</a>--%>
+                        <a href="EditAddress.aspx?id=<%# Eval("Id") %>">编辑</a>
 
                     </div>
                 </div>
@@ -48,7 +40,7 @@
     </div>
     <!--收货地址 End-->
 
-    <a href="#" class="addaddress">添加收货地址</a>
+    <a href="EditAddress.aspx" class="addaddress">添加收货地址</a>
 
 </body>
 

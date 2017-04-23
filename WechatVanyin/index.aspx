@@ -103,24 +103,24 @@
 
                 <div class="designtem2left">
                     <a href="#">
-                    <img src="<%= GetFileServer(10000)+modelTemplate[1].IndexImg %>" />
-                    <div class="name">
-                        <p><%= modelTemplate[1].Title %></p>
-                        <p><%= modelTemplate[1].Price %></p>
-                    </div>
-                </a>
-                     <a href="#">
-                    <img src="<%= GetFileServer(10000)+modelTemplate[2].IndexImg %>" />
-                    <div class="name">
-                        <p><%= modelTemplate[2].Title %></p>
-                        <p><%= modelTemplate[2].Price %></p>
-                    </div>
-                </a>
+                        <img src="<%= GetFileServer(10000)+modelTemplate[1].IndexImg %>" />
+                        <div class="name">
+                            <p><%= modelTemplate[1].Title %></p>
+                            <p><%= modelTemplate[1].Price %></p>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <img src="<%= GetFileServer(10000)+modelTemplate[2].IndexImg %>" />
+                        <div class="name">
+                            <p><%= modelTemplate[2].Title %></p>
+                            <p><%= modelTemplate[2].Price %></p>
+                        </div>
+                    </a>
                 </div>
                 <div class="designtem2right">
                     <a href="#" class="rightbox">
                         <img src="<%= GetFileServer(10000)+modelTemplate[3].IndexImg %>" />
-                         <p><%= modelTemplate[3].Title %></p>
+                        <p><%= modelTemplate[3].Title %></p>
                         <p><%= modelTemplate[3].Price %></p>
                     </a>
 
@@ -131,34 +131,21 @@
     <!--设计模版 End-->
     <!--印刷工艺 Begin-->
     <div class="technology">
-        <a class="technologylist">
-            <span class="img">
-                <img src="img/index/technologyimg1.jpg" /></span>
-            <p>
-                <span>精品UV工艺</span>
-                <span></span>
-                <span>实力上线印刷全面启动我们的技术全国领先。</span>
-            </p>
-        </a>
-        <a class="technologylist">
+        <asp:Repeater runat="server" ID="RepTechnology">
+            <ItemTemplate>
+                <a class="technologylist">
+                    <span class="img">
+                        <img src="<%# GetFileServer(10000)+Eval("ImgUrl") %>" /></span>
+                    <p>
+                        <span><%# Eval("Title") %></span>
+                        <span></span>
+                        <span><%# Eval("Describe") %></span>
+                    </p>
+                </a>
+            </ItemTemplate>
+        </asp:Repeater>
 
-            <p>
-                <span>精品UV工艺</span>
-                <span></span>
-                <span>实力上线印刷全面启动我们的技术全国领先。</span>
-            </p>
-            <span class="img">
-                <img src="img/index/technologyimg1.jpg" /></span>
-        </a>
-        <a class="technologylist">
-            <span class="img">
-                <img src="img/index/technologyimg1.jpg" /></span>
-            <p>
-                <span>精品UV工艺</span>
-                <span></span>
-                <span>实力上线印刷全面启动我们的技术全国领先。</span>
-            </p>
-        </a>
+
     </div>
     <!--印刷工艺 End-->
     <!--底部导航 Begin-->

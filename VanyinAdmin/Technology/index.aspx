@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Index.aspx.cs" Inherits="VanyinAdmin.Member.Index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="VanyinAdmin.Technology.index" %>
 
 <%@ Register Src="~/Controls/Header.ascx" TagPrefix="uc1" TagName="Header" %>
 <%@ Register Src="~/Controls/Left.ascx" TagPrefix="uc1" TagName="Left" %>
@@ -35,9 +35,9 @@
                         <span>位置：</span>
                         <a href="index.aspx">首页</a>
                         <span>></span>
-                        <a href="/Member/index.aspx">会员管理</a>
+                        <a href="/Technology/index.aspx">工艺材质</a>
                         <span>></span>
-                        <span>会员管理</span>
+                        <span>工艺材质管理</span>
                     </div>
                     <ul class="searchbox boxsizing">
                         <li>
@@ -70,7 +70,7 @@
 
                     <ul class="operation boxsizing">
                         <li><a href="Edit.aspx">添加</a></li>
-                        <li><a href="#">删除</a></li>
+                        
                     </ul>
 
 
@@ -78,17 +78,15 @@
                         <ul class="title">
                             <li style="width: 40px;">
                                 <input type="checkbox" name="" id="" value="" /></li>
-
-                            <li style="width: 150px;">会员编号</li>
-                            <li style="width: 250px;">帐号</li>
-                            <li style="width: 100px;">所属类别</li>
-                              <li style="width: 100px;">头像</li>
-                            <li style="width: 100px;">昵称</li>
-                            <li style="width: 150px;">手机号</li>
-                            <li style="width: 150px;">邮箱</li>
+                             <li style="width: 150px;">编号</li>
+                            <li style="width: 250px;">名称</li>
+                            <li style="width: 100px;">类别</li>
+                            <li style="width: 100px;">展示图片</li>
                             <li style="width: 60px;">状态</li>
-                            <li style="width: 100px;">是否绑定微信</li>
-                            <li style="width: 150px;">注定时间</li>
+                              <li style="width: 60px;">热门</li>
+                            <li style="width: 60px;">首页</li>
+                            <li style="width: 60px;">推荐</li>
+                           
                         </ul>
                         <asp:Repeater runat="server" ID="repList" OnItemCommand="repList_ItemCommand">
                             <ItemTemplate>
@@ -99,27 +97,21 @@
                                         <asp:HiddenField runat="server" ID="lbId" Value='<%# Eval("Id") %>' />
                                     </li>
                                     <li style="width: 250px;" class="headline">
-                                        <a href="Edit.aspx?id=<%# Eval("Id")+strUrl.ToString()+"&page="+page %>"><%# Eval("Account") %></a></li>
+                                        <a href="Edit.aspx?id=<%# Eval("Id")+strUrl.ToString()+"&page="+page %>"><%# Eval("Title") %></a></li>
                                     <li style="width: 100px;"><%# GetCategoryName(int.Parse(Eval("TypeId").ToString())) %></li>
-                                    <li style="width: 100px;" class="img"><%# string.IsNullOrEmpty(Eval("HeaderImg").ToString())?"—":"<img src=\""+Eval("HeaderImg").ToString()+"\" />" %> </li>
-                                     <li style="width: 100px;">
-                                       <%# string.IsNullOrEmpty(Eval("Nickname").ToString())?"—":Eval("Nickname") %>
-                                    </li>
-                                     <li style="width: 150px;">
-                                       <%# Eval("Phone") %>
-                                    </li>
-                                     <li style="width: 150px;">
-                                       <%# string.IsNullOrEmpty(Eval("Email").ToString())?"—":Eval("Email") %>
+                                    <li style="width: 100px;" class="img"><%# string.IsNullOrEmpty(Eval("ImgUrl").ToString())?"—":"<img src=\""+Eval("ImgUrl").ToString()+"\" />" %> </li>
+                                    
+                                     <li style="width: 60px;" class="state">
+                                        <asp:LinkButton runat="server" CommandName="lbtnState" ID="lbtnState"><i class="<%# Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("StateInfo").ToString()))  %>"></i></asp:LinkButton></a></li>
+                                    <li style="width: 60px;" class="state">
+                                        <asp:LinkButton runat="server" CommandName="lbtnHot" ID="lbtnHot"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsHot").ToString()))  %>"></i></asp:LinkButton></a>
                                     </li>
                                     <li style="width: 60px;" class="state">
-                                        <asp:LinkButton runat="server" CommandName="lbtnState" ID="lbtnState"><i class="<%# Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("StateInfo").ToString()))  %>"></i></asp:LinkButton></a></li>
-                                 
-                                   
-                                    <li style="width: 100px;">
-                                       <%# string.IsNullOrEmpty(Eval("OpenId").ToString())?"未绑定":"已绑定" %>
+                                        <asp:LinkButton runat="server" CommandName="lbtnIndex" ID="lbtnIndex"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsIndex").ToString())) %>"></i></asp:LinkButton></a>
                                     </li>
-                                    <li style="width: 150px;"><%# Vanyin.Common.Utils.GetDate(Eval("AddTime").ToString())  %></li>
-
+                                    <li style="width: 60px;" class="state">
+                                        <asp:LinkButton runat="server" CommandName="lbtnRec" ID="lbtnRec"><i class="<%#  Vanyin.Common.Utils.GetStateClass(int.Parse(Eval("IsRec").ToString())) %>"></i></asp:LinkButton></a>
+                                    </li>
                                 </ul>
                             </ItemTemplate>
                         </asp:Repeater>
@@ -140,7 +132,7 @@
                 <!--正文 End-->
                 <!--左侧导航 Begin-->
                 <uc1:Left runat="server" ID="Left" />
-                <!--左侧导航 Begin-->u
+                <!--左侧导航 Begin-->
             </div>
 
             <script src="/js/jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
@@ -149,7 +141,7 @@
             <script type="text/javascript">
                 $(function () {
 
-                    SetLeftMenu("会员管理", "会员管理");
+                    SetLeftMenu("工艺材质", "工艺材质管理");
                     $(".page").pagination(<%= pcount %>, {
                         
                         prev_text: "上一页",

@@ -21,6 +21,7 @@ namespace WechatVanyin
                 BindIndexBanner();
                 BindRepType();
                 BindRecTemplate();
+                BindTechnology();
             }
         }
 
@@ -52,6 +53,19 @@ namespace WechatVanyin
         void BindRecTemplate()
         {
            modelTemplate = bllTemplate.GetModelList("IsIndex=1 and StateInfo=1");
+        }
+
+
+        /// <summary>
+        /// 绑定工艺材质
+        /// </summary>
+        void BindTechnology()
+        {
+            Vanyin.BLL.Technology bll = new Vanyin.BLL.Technology();
+
+            RepTechnology.DataSource = bll.GetList(0, "StateInfo=1 and IsIndex=1", "SortNum asc,Id desc");
+            RepTechnology.DataBind();
+
         }
 
     }

@@ -320,6 +320,9 @@
     <Compile Include="Tools\AddDesignOrder.ashx.cs">
       <DependentUpon>AddDesignOrder.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\AddMallOrder.ashx.cs">
+      <DependentUpon>AddMallOrder.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\AddPrintOrder.ashx.cs">
       <DependentUpon>AddPrintOrder.ashx</DependentUpon>
     </Compile>
@@ -328,6 +331,15 @@
     </Compile>
     <Compile Include="Tools\CheckPhone.ashx.cs">
       <DependentUpon>CheckPhone.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\EditAddress.ashx.cs">
+      <DependentUpon>EditAddress.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\GetCity.ashx.cs">
+      <DependentUpon>GetCity.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="Tools\GetDistrict.ashx.cs">
+      <DependentUpon>GetDistrict.ashx</DependentUpon>
     </Compile>
     <Compile Include="Tools\GetTemplateDetail.ashx.cs">
       <DependentUpon>GetTemplateDetail.ashx</DependentUpon>
@@ -356,6 +368,10 @@
     <Content Include="Tools\CheckPhone.ashx" />
     <Content Include="Tools\QuitLogin.ashx" />
     <Content Include="Tools\CheckIntegra.ashx" />
+    <Content Include="Tools\GetCity.ashx" />
+    <Content Include="Tools\GetDistrict.ashx" />
+    <Content Include="Tools\EditAddress.ashx" />
+    <Content Include="Tools\AddMallOrder.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -401,9 +417,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1254</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.1.115:8088/</IISUrl>
-          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
-          <IISAppRootUrl>http://192.168.1.115:8088/</IISAppRootUrl>
+          <IISUrl>http://192.168.0.5:8089/WechatVanyin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

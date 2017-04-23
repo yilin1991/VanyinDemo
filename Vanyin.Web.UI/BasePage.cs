@@ -102,6 +102,7 @@ namespace Vanyin.Web.UI
         }
 
 
+
         /// <summary>
         /// 获取设计和印刷订单状态
         /// </summary>
@@ -147,6 +148,24 @@ namespace Vanyin.Web.UI
             return model.FileServer;
         }
 
+        /// <summary>
+        /// 获取城市名称
+        /// </summary>
+        /// <param name="strcity"></param>
+        /// <returns></returns>
+        public string GetCityName(string strcity)
+        {
+            Vanyin.BLL.S_Province bllProvince = new Vanyin.BLL.S_Province();
+            Vanyin.BLL.S_City bllCity = new Vanyin.BLL.S_City();
+            Vanyin.BLL.S_District bllDistrict = new Vanyin.BLL.S_District();
+            string[] strList = strcity.Split('-');
+
+            return bllProvince.GetModel(long.Parse(strList[0])).ProvinceName + bllCity.GetModel(long.Parse(strList[1])).CityName + bllDistrict.GetModel(long.Parse(strList[2])).DistrictName;
+
+
+
+
+        }
 
     }
 }

@@ -54,6 +54,14 @@
                 <a href="/FileManage/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>文件管理</span></a>
                 <a href="/FileManage/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加文件</span></a>
             </li>
+        </ul> <ul class="leftlist">
+            <li class="title">
+                <a  draggable="false"><span><i class=" icon-inbox"></i></span><span>工艺材质</span></a>
+            </li>
+            <li class="leftlink">
+                <a href="/Technology/index.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>工艺材质管理</span></a>
+                <a href="/Technology/Edit.aspx" draggable="false"><span></span><i class=" icon-caret-right"></i><span>添加工艺材质</span></a>
+            </li>
         </ul>
         <ul class="leftlist">
             <li class="title">
