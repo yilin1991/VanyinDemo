@@ -64,6 +64,8 @@
         <script src="/js/Validform_v5.3.2.js"></script>
         <script>
             $(function () {
+                $(".loginbox").css("margin-top", ($(window).height() - $(".loginbox").height() - 50) / 2 + "px");
+
                 $("#myForm").Validform({
                     ajaxPost: true,
                     tiptype: function (msg, o, cssctl) {

@@ -48,6 +48,17 @@ namespace WechatVanyin
                     orderNum = model.NumId;
                     orderDetail = "DesignOrderDetail.aspx?id=" + model.Id;
                 }
+                if (string.Equals(Request.Params["type"], "mall"))
+                {
+                    Vanyin.BLL.ExchangeOrder bll = new Vanyin.BLL.ExchangeOrder();
+
+                    Vanyin.Model.ExchangeOrder model = bll.GetModel(int.Parse(Request.Params["orderid"]));
+                    orderNum = model.Num;
+                    orderDetail = "MallDetail.aspx?id=" + model.Id;
+                }
+                
+
+
 
             }
         }

@@ -1,6 +1,6 @@
-body{background-color: #c0eaed;position: relative;}
+body{background-color: #c0eaed;position: relative;height:100%;}
 
-.loginbox{width: 90vw; display: table; background-color: #fff;border-radius: 10px;margin-top:30%;margin-left:5vw;}
+.loginbox{width: 90vw; display: table; background-color: #fff;border-radius: 10px;margin-left:5vw; margin-top:20%;}
 .loginbox .title{text-align: center;font-size: 1.8em;padding-top: 25px;color: #303030;letter-spacing: 0.4em;}
 
 

@@ -26,13 +26,20 @@
             <div class="printform">
                 <div class="input_group">
                     <label class="input_lable">印刷类别</label>
-                    <asp:DropDownList runat="server" ID="ddlTypelist" datatype="*" nullmsg="请选择印刷类别！" errormsg="请选择印刷类别！">
-                        <asp:ListItem Value="">请选择印刷类别</asp:ListItem>
-                    </asp:DropDownList>
+                    <select id="ddlTypelist" name="ddlTypelist" onchange="typechange()">
+                        <option value="">请选择印刷类别</option>
+                        <asp:Repeater runat="server" ID="RepList">
+                            <ItemTemplate>
+                                <option value="<%# Eval("Id") %>"><%# Eval("Title") %></option>
+                            </ItemTemplate>
+                        </asp:Repeater>
+                    </select>
+
+
                 </div>
                 <div class="input_group">
                     <label class="input_lable">印刷数量</label>
-                    <input type="text" class="inputtext" name="txtNum" id="txtNum" placeholder="请输入印刷数量" datatype="*" nullmsg="请输入印刷数量！" errormsg="印刷数量为整数！" />
+                    <input type="text" class="inputtext inputprintnum" name="txtNum" id="txtNum" placeholder="请输入印刷数量" datatype="*" nullmsg="请输入印刷数量！" errormsg="印刷数量为整数！" /><span class="unit"></span>
                 </div>
                 <div class="input_group input_remark">
                     <span class="input_span">
@@ -71,9 +78,10 @@
         </div>
     </form>
 
-    <script src="/js/jquery-1.11.1.min.js"></script>
+    <script src="js/jquery-1.11.1.min.js"></script>
     <script src="/js/weChatMsg.js"></script>
     <script src="/js/Validform_v5.3.2.js"></script>
+    <script src="js/urlParams.js"></script>
     <script>
         $(function () {
             $("#myForm").Validform({
@@ -105,7 +113,36 @@
             });
 
 
+            if ($.request.queryString["type"]!="")
+            {
+                $("#ddlTypelist").val($.request.queryString["type"]);
+            }
+
+
+            
+
         })
+
+
+        function typechange() {
+
+            $.ajax({
+                type: "POST",//传输类型get/post
+                url: "/Tools/GetPrintTypeUnit.ashx",//请求路径
+                data: { id: $("#ddlTypelist").val() },
+                dataType: "json",//返回格式有json
+                success: function (data) { //成功返时返回回来的data数据
+
+                    $(".unit").text(data.unit);
+                    
+                },
+                error: function (err) {//错误是弹出报错框
+                    //alert("shibai");
+                }
+            })
+        }
+
+
     </script>
 
 </body>

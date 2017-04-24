@@ -52,10 +52,14 @@
         <!--底部导航 Begin-->
         <uc1:Footer runat="server" ID="Footer" />
         <!--底部导航 End-->
+        
         <script src="/js/weChatMsg.js"></script>
         <script src="/js/Validform_v5.3.2.js"></script>
         <script>
             $(function () {
+                $(".loginbox").css("margin-top", ($(window).height() - $(".loginbox").height()-60) / 2 + "px");
+
+
                 $("#myForm").Validform({
                     ajaxPost: true,
                     tiptype: function (msg, o, cssctl) {

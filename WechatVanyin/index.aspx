@@ -84,13 +84,13 @@
                 <p>我要设计</p>
             </li>
             <li>
-                <a href="print.aspx">去设计</a>
+                <a href="design.aspx">去设计</a>
             </li>
         </ul>
 
         <div class="designlist">
             <div class="designtem1">
-                <a href="#">
+                <a href="design.aspx?type=<%= modelTemplate[0].TypeId %>&temid=<%# modelTemplate[0].Id %>">
                     <img src="<%= GetFileServer(10000)+modelTemplate[0].IndexImg %>" />
                     <div class="name">
                         <p><%= modelTemplate[0].Title %></p>
@@ -102,14 +102,14 @@
             <div class="designtem2">
 
                 <div class="designtem2left">
-                    <a href="#">
+                    <a href="design.aspx?type=<%= modelTemplate[1].TypeId %>&temid=<%# modelTemplate[1].Id %>">
                         <img src="<%= GetFileServer(10000)+modelTemplate[1].IndexImg %>" />
                         <div class="name">
                             <p><%= modelTemplate[1].Title %></p>
                             <p><%= modelTemplate[1].Price %></p>
                         </div>
                     </a>
-                    <a href="#">
+                    <a href="design.aspx?type=<%= modelTemplate[2].TypeId %>&temid=<%# modelTemplate[2].Id %>">
                         <img src="<%= GetFileServer(10000)+modelTemplate[2].IndexImg %>" />
                         <div class="name">
                             <p><%= modelTemplate[2].Title %></p>
@@ -118,7 +118,7 @@
                     </a>
                 </div>
                 <div class="designtem2right">
-                    <a href="#" class="rightbox">
+                    <a href="design.aspx?type=<%= modelTemplate[3].TypeId %>&temid=<%# modelTemplate[3].Id %>" class="rightbox">
                         <img src="<%= GetFileServer(10000)+modelTemplate[3].IndexImg %>" />
                         <p><%= modelTemplate[3].Title %></p>
                         <p><%= modelTemplate[3].Price %></p>

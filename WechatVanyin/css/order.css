@@ -27,3 +27,4 @@
 .listboxleft p.ordername span{display: block;padding: 2px 8px 0 8px;  color: #FFFFFF;font-size: 0.6em;margin-right: 5px;}
 .listboxleft p.ordername span.orderdesign{background-color: #e93052;}
 .listboxleft p.ordername span.printdesign{background-color: #17b4bb;}
+.listboxleft p.ordername span.integraldesign{background-color: #7b7b7b;}

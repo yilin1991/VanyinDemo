@@ -10,7 +10,8 @@ namespace WechatVanyin
     public partial class integral_home : Vanyin.Web.UI.BasePage
     {
         Vanyin.BLL.ProductMall bllMall = new Vanyin.BLL.ProductMall();
-
+        Vanyin.BLL.Member bllMember = new Vanyin.BLL.Member();
+        public Vanyin.Model.Member modelMember = new Vanyin.Model.Member();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -18,6 +19,7 @@ namespace WechatVanyin
             if (!IsPostBack)
             {
                 BindMallList();
+                modelMember = bllMember.GetModel(int.Parse(Vanyin.Common.Utils.GetCookie("MemberId")));
             }
         }
 

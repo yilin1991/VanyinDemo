@@ -24,12 +24,12 @@
         <div class="integraltop">
             <div class="integraltop_detail">
                 <img src="img/integral/home/headerimg.jpg" />
-                <span>15021952423</span>
+                <span><%= modelMember.Phone %></span>
                 <a href="integral-detailed.aspx">积分明细</a>
             </div>
             <div class="integraltop_num">
-                <p>可用积分<span>1000</span></p>
-                <p>总积分<span>500</span></p>
+                <p>可用积分<span><%= GetUsableIntegral(Vanyin.Common.Utils.GetCookie("MemberId")) %></span></p>
+                <p>总积分<span><%= GetCountIntegral(Vanyin.Common.Utils.GetCookie("MemberId")) %></span></p>
             </div>
 
         </div>

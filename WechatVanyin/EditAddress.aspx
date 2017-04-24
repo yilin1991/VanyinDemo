@@ -125,9 +125,14 @@
                     postonce: true,
                     callback: function (data) {
                         if (data.state == "success") {
-
+                            if ($.request.queryString["pmid"] != "")
+                            {
+                                location.href = "integral-order.aspx?pmid=" + $.request.queryString["pmid"] + "&aid=" + data.id;
+                            }
+                            else
+                                {
                             location.href = "Address.aspx";
-                         
+                            }
                         }
                         else {
                             wechatMsg("提示信息", data.msg);

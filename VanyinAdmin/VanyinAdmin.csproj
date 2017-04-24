@@ -367,6 +367,26 @@
     <Content Include="UplaodFileds\20170418\20170418171945330.png" />
     <Content Include="UplaodFileds\20170418\20170418172017446.png" />
     <Content Include="UplaodFileds\20170418\20170418172047645.png" />
+    <Content Include="UplaodFileds\20170418\20170418175310881.jpg" />
+    <Content Include="UplaodFileds\20170419\20170419172644534.png" />
+    <Content Include="UplaodFileds\20170419\2017041917273716.jpg" />
+    <Content Include="UplaodFileds\20170419\2017041917273720.jpg" />
+    <Content Include="UplaodFileds\20170419\2017041917273727.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421135137139.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421140630258.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421142527531.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421142716016.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421142923102.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421143040837.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421143201108.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421143657475.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421144015698.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421144837847.jpg" />
+    <Content Include="UplaodFileds\20170421\20170421183257836.png" />
+    <Content Include="UplaodFileds\20170421\20170421183541320.png" />
+    <Content Include="UplaodFileds\20170421\20170421183655295.png" />
+    <Content Include="UplaodFileds\20170421\20170421183739007.png" />
+    <Content Include="UplaodFileds\20170423\20170423113611757.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -547,6 +567,9 @@
     <Content Include="Tools\CheckAccount.ashx" />
     <Content Include="Tools\CheckPhone.ashx" />
     <Content Include="Tools\GetCity.ashx" />
+    <None Include="Properties\PublishProfiles\vanyinadmin.pubxml" />
+    <Content Include="UplaodFileds\20170421\20170421143410063" />
+    <Content Include="UplaodFileds\20170421\20170421143913102" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -591,7 +614,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>65390</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.0.5:8088/VanyinAdmin</IISUrl>
+          <IISUrl>http://192.168.1.115:8087/VanyinAdmin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

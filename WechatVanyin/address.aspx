@@ -26,9 +26,9 @@
                         </li>
                     </ul>
                     <div class="addressedit">
-                        <%--<a href="#">删除</a>--%>
+                        <%--<a href="#">删除</a>--%> 
                         <a href="EditAddress.aspx?id=<%# Eval("Id") %>">编辑</a>
-
+                       <%# BindSelect(Eval("Id").ToString()) %>
                     </div>
                 </div>
             </ItemTemplate>
@@ -40,7 +40,7 @@
     </div>
     <!--收货地址 End-->
 
-    <a href="EditAddress.aspx" class="addaddress">添加收货地址</a>
+    <a href="EditAddress.aspx<%= strPmid %>" class="addaddress">添加收货地址</a>
 
 </body>
 

@@ -13,7 +13,7 @@ namespace WechatVanyin
         Vanyin.BLL.DesignOrder bllDesign = new Vanyin.BLL.DesignOrder();
         Vanyin.BLL.PrintOrder bllPrint = new Vanyin.BLL.PrintOrder();
         Vanyin.BLL.ExchangeOrder bllExchange = new Vanyin.BLL.ExchangeOrder();
-
+        Vanyin.BLL.ProductMall bllMall = new Vanyin.BLL.ProductMall();
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckLogin("personal-home.aspx");
@@ -91,6 +91,28 @@ namespace WechatVanyin
                 tblDatas.Rows.Add(newRow);
             }
 
+            foreach (DataRow item in dtMall.Rows)
+            {
+                newRow = tblDatas.NewRow();
+                newRow["OrderId"] = item["Id"].ToString();
+                newRow["OrderNum"] = item["Num"].ToString();
+                newRow["OrderType"] = "积分";
+
+                newRow["TypeStyle"] = "integraldesign";
+                newRow["StateStyle"] = 0;
+
+
+                newRow["OrderName"] = bllMall.GetModel(int.Parse(item["Mall"].ToString())).NameInfo;
+
+                newRow["OrderState"] = GetStateName(item["StateInfo"].ToString());
+
+
+
+                newRow["OrderDetail"] = "MallDetail.aspx?id=" + item["Id"].ToString();
+                newRow["AddTime"] = item["Addtime"].ToString();
+
+                tblDatas.Rows.Add(newRow);
+            }
             tblDatas.DefaultView.Sort = "AddTime desc";
 
 

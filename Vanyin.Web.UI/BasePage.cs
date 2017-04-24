@@ -161,9 +161,43 @@ namespace Vanyin.Web.UI
             string[] strList = strcity.Split('-');
 
             return bllProvince.GetModel(long.Parse(strList[0])).ProvinceName + bllCity.GetModel(long.Parse(strList[1])).CityName + bllDistrict.GetModel(long.Parse(strList[2])).DistrictName;
+        }
 
 
+        /// <summary>
+        /// 获取会员可用积分
+        /// </summary>
+        /// <param name="memberId"></param>
+        /// <returns></returns>
+        public int GetUsableIntegral(string memberId)
+        {
+            Vanyin.BLL.Integral bll = new BLL.Integral();
+            DataSet ds = bll.GetList("MemberId=" + memberId);
+            int integral = 0;
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                integral += int.Parse(item["Num"].ToString());
+            }
 
+            return integral;
+
+        }
+        /// <summary>
+        /// 获取会员总积分
+        /// </summary>
+        /// <param name="memberId"></param>
+        /// <returns></returns>
+        public int GetCountIntegral(string memberId)
+        {
+            Vanyin.BLL.Integral bll = new BLL.Integral();
+            DataSet ds = bll.GetList("MemberId=" + memberId+ "and TypeId in (10037,10038)");
+            int integral = 0;
+            foreach (DataRow item in ds.Tables[0].Rows)
+            {
+                integral += int.Parse(item["Num"].ToString());
+            }
+
+            return integral;
 
         }
 

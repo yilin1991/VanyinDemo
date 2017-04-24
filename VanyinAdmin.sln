@@ -19,6 +19,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WechatVanyin", "WechatVanyi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vanyin.Web.UI", "Vanyin.Web.UI\Vanyin.Web.UI.csproj", "{DCA80150-902A-45EB-8A8B-8F625E9B6912}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CCPRestSDK", "CCPRestSDK\CCPRestSDK.csproj", "{184BE321-6411-4EAA-816F-A63C8AD2FDA8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +59,10 @@ Global
 		{DCA80150-902A-45EB-8A8B-8F625E9B6912}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCA80150-902A-45EB-8A8B-8F625E9B6912}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCA80150-902A-45EB-8A8B-8F625E9B6912}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184BE321-6411-4EAA-816F-A63C8AD2FDA8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{184BE321-6411-4EAA-816F-A63C8AD2FDA8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{184BE321-6411-4EAA-816F-A63C8AD2FDA8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{184BE321-6411-4EAA-816F-A63C8AD2FDA8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

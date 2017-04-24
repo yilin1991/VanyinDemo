@@ -14,13 +14,15 @@ namespace WechatVanyin
         Vanyin.BLL.S_District bllDistrict = new Vanyin.BLL.S_District();
         Vanyin.BLL.S_Province bllProvince = new Vanyin.BLL.S_Province();
 
-
+        public string strHtml = "";
+        public string strPmid = "";
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckLogin("Address.aspx");
             if (!IsPostBack)
             {
                 BindRepList();
+                BindPmid();
             }
         }
 
@@ -29,12 +31,41 @@ namespace WechatVanyin
         /// </summary>
         void BindRepList()
         {
-            RepAddressList.DataSource = bll.GetList(0, "MemberId=" + Vanyin.Common.Utils.GetCookie("MemberId"), "Id desc");
+            RepAddressList.DataSource = bll.GetList(0, "MemberId=" + Vanyin.Common.Utils.GetCookie("MemberId")+ " and StateInfo=1", "Id desc");
             RepAddressList.DataBind();
         }
 
 
+        /// <summary>
+        /// 绑定选择按钮
+        /// </summary>
+        public string BindSelect(string aid)
+        {
+            if (!string.IsNullOrEmpty(Request.Params["pid"]))
+            {
+                return "<a href='integral-order.aspx?pmid=" + Request.Params["pid"] + "&aid="+aid+"'>选择</a>";
+            }
+            else
+            {
+                return "";
+            }
+        }
 
+
+        /// <summary>
+        /// 绑定
+        /// </summary>
+        void BindPmid()
+        {
+            if (!string.IsNullOrEmpty(Request.Params["pid"]))
+            {
+                strPmid = "?pmid=" + Request.Params["pid"];
+            }
+            else
+            {
+                strPmid = "";
+            }
+        }
 
 
     }

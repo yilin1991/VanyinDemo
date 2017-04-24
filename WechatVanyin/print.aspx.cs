@@ -12,16 +12,28 @@ namespace WechatVanyin
 {
     public partial class print : Vanyin.Web.UI.BasePage
     {
+        Vanyin.BLL.Category bll = new Vanyin.BLL.Category();
+
         protected void Page_Load(object sender, EventArgs e)
         {
             CheckLogin("Print.aspx");
 
             if (!IsPostBack)
             {
-                BindddlType(10002, ddlTypelist);
+                //BindddlType(10002, ddlTypelist);
+                BindRepList();
             }
         }
 
+
+        /// <summary>
+        /// 绑定印刷类别
+        /// </summary>
+        void BindRepList()
+        {
+            RepList.DataSource = bll.GetList("ParentId=10002");
+            RepList.DataBind();
+        }
 
        
 

@@ -49,7 +49,7 @@
 				<a href="integral-home.aspx">
 					<span class="linkico"><img src="img/personal/home/homeico3.png"/></span>
 					<span class="linkname">我的积分</span>
-					<span class="linknum">500分</span>
+					<span class="linknum"><%= GetUsableIntegral(Vanyin.Common.Utils.GetCookie("MemberId")) %>分</span>
 					<span class="linkright"><img src="img/personal/home/homerightico.png"/></span>
 				</a>
 				<a href="#">

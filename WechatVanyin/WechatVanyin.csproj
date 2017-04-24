@@ -155,6 +155,7 @@
     <Content Include="js\Validform_v5.3.2.js" />
     <Content Include="js\weChatMsg.js" />
     <Content Include="login.aspx" />
+    <Content Include="MallDetail.aspx" />
     <Content Include="opinion.aspx" />
     <Content Include="order-list.aspx" />
     <Content Include="OrderSuccess.aspx" />
@@ -260,6 +261,13 @@
     <Compile Include="login.aspx.designer.cs">
       <DependentUpon>login.aspx</DependentUpon>
     </Compile>
+    <Compile Include="MallDetail.aspx.cs">
+      <DependentUpon>MallDetail.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MallDetail.aspx.designer.cs">
+      <DependentUpon>MallDetail.aspx</DependentUpon>
+    </Compile>
     <Compile Include="opinion.aspx.cs">
       <DependentUpon>opinion.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -341,6 +349,9 @@
     <Compile Include="Tools\GetDistrict.ashx.cs">
       <DependentUpon>GetDistrict.ashx</DependentUpon>
     </Compile>
+    <Compile Include="Tools\GetPrintTypeUnit.ashx.cs">
+      <DependentUpon>GetPrintTypeUnit.ashx</DependentUpon>
+    </Compile>
     <Compile Include="Tools\GetTemplateDetail.ashx.cs">
       <DependentUpon>GetTemplateDetail.ashx</DependentUpon>
     </Compile>
@@ -372,6 +383,8 @@
     <Content Include="Tools\GetDistrict.ashx" />
     <Content Include="Tools\EditAddress.ashx" />
     <Content Include="Tools\AddMallOrder.ashx" />
+    <Content Include="Tools\GetPrintTypeUnit.ashx" />
+    <None Include="Properties\PublishProfiles\wechatVanyin.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -417,7 +430,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>1254</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://192.168.0.5:8089/WechatVanyin</IISUrl>
+          <IISUrl>http://192.168.1.115:8088/WechatVanyin</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
