@@ -45,12 +45,15 @@
     <Compile Include="Helpers\DateHelper.cs" />
     <Compile Include="Helpers\HttpHelper.cs" />
     <Compile Include="Helpers\JSSerializerHelper.cs" />
+    <Compile Include="Helpers\TimeStamp.cs" />
     <Compile Include="Helpers\UrlHelper.cs" />
+    <Compile Include="IModel\ICacheProvider.cs" />
     <Compile Include="Model\ReceiveBase.cs" />
     <Compile Include="Model\ReturnInfo.cs" />
     <Compile Include="Model\UserInfo.cs" />
     <Compile Include="Model\UserInfoCode.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SimpleCacheProvider.cs" />
     <Compile Include="WeChaMethod.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

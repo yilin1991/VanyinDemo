@@ -7,12 +7,15 @@ using System.Xml;
 using WeChatAPI.Model;
 using System.Web.Script.Serialization;
 using WeChatAPI.Helpers;
-
+using System.Net;
 
 namespace WeChatAPI
 {
    public  class WeChaMethod
     {
+
+        private SimpleCacheProvider _cache;
+        const string CACHE_ACCESS_TOKEN = "CACHE_ACCESS_TOKEN";
 
         /// <summary>
         /// 第三方用户唯一凭证
@@ -66,73 +69,51 @@ namespace WeChatAPI
         /// </summary>
         /// <param name="path">AccessToken XML文件地址</param>
         /// <returns></returns>
-        public string AccessToken(string filepath)
+        public string AccessToken()
         {
-           
 
-            string accessToken = "";
-            StreamReader str = new StreamReader(filepath, Encoding.UTF8);
-            XmlDocument xml = new XmlDocument();
-            xml.Load(str);
-            str.Close();
-            str.Dispose();
-
-            if (!string.IsNullOrWhiteSpace(xml.SelectSingleNode("xml").SelectSingleNode("Access_Token").InnerText))
+            var token = _cache.GetCache(CACHE_ACCESS_TOKEN);
+            if (token != null)
+                return token.ToString();
+            try
             {
-                accessToken = xml.SelectSingleNode("xml").SelectSingleNode("Access_Token").InnerText;
-                if (!string.IsNullOrWhiteSpace(xml.SelectSingleNode("xml").SelectSingleNode("Expires_In").InnerText))
+                string result = HttpGet(string.Format(CACHE_ACCESS_TOKEN, this.AppId, this.Secret));
+                JavaScriptSerializer serializer = new JavaScriptSerializer();
+                Dictionary<string, object> jsonObj = serializer.Deserialize<dynamic>(result);
+                if (jsonObj.ContainsKey("access_token"))
                 {
-                    DateTime dateNow = Convert.ToDateTime(xml.SelectSingleNode("xml").SelectSingleNode("Expires_In").InnerText);
-                    if (dateNow <= DateTime.Now)
-                    {
-                        Model.AccessToken model = GetAccessToken();
-                        SetAccessToken(model, filepath);
-                        accessToken = model.Access_Token;
-                    }
+                    token = jsonObj["access_token"].ToString();
+                    this._cache.SetCache(CACHE_ACCESS_TOKEN, token.ToString(), 7000);
                 }
-
                 else
                 {
-                    Model.AccessToken model = GetAccessToken();
-                    SetAccessToken(model, filepath);
-                    accessToken = model.Access_Token;
+                    //为了程序正常运行，不抛出错误，可以记录日志
+                    token = jsonObj["errmsg"];
                 }
             }
-            else
+            catch
             {
-                Model.AccessToken model = GetAccessToken();
-
-                SetAccessToken(model, filepath);
-                accessToken = model.Access_Token;
+                //为了程序正常运行，不抛出错误，可以记录日志
+                token = "there_is_an_error_when_getting_token";
             }
+            
+            return token.ToString();
 
-
-
-            return accessToken;
 
 
         }
-
 
         /// <summary>
-        /// 设置XML中的AccessToken及过期时间
+        /// 后台发起http请求
         /// </summary>
-        /// <param name="model"></param>
-        /// <param name="filepath"></param>
-        public void SetAccessToken( AccessToken model, string filepath)
+        /// <param name="url">请求URL</param>
+        /// <returns>请求结果字符串</returns>
+        private string HttpGet(string url)
         {
-            DateTime dateNow = DateTime.Now;
-            StreamReader str = new StreamReader(filepath, Encoding.UTF8);
-            XmlDocument xml = new XmlDocument();
-            xml.Load(str);
-            str.Close();
-            str.Dispose();
-
-            xml.SelectSingleNode("xml").SelectSingleNode("Access_Token").InnerText = model.Access_Token;
-            xml.SelectSingleNode("xml").SelectSingleNode("Expires_In").InnerText = dateNow.AddSeconds(double.Parse(model.Expires_In)).ToString();
-            xml.Save(filepath);
-
+            return new WebClient().DownloadString(url);
         }
+
+
 
         #region 消息管理
 
