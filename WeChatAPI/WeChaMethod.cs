@@ -11,7 +11,7 @@ using System.Net;
 
 namespace WeChatAPI
 {
-   public  class WeChaMethod
+   public class WeChaMethod
     {
 
         private SimpleCacheProvider _cache;
@@ -67,7 +67,6 @@ namespace WeChatAPI
         /// <summary>
         /// 获取AccessToken
         /// </summary>
-        /// <param name="path">AccessToken XML文件地址</param>
         /// <returns></returns>
         public string AccessToken()
         {

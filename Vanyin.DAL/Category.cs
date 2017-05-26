@@ -366,10 +366,6 @@ namespace Vanyin.DAL
                 //调用自身迭代
                 this.GetChannelChild(oldData, newData, int.Parse(dr[i]["Id"].ToString()));
             }
-
-
-         
-
         }
 
 

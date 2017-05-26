@@ -46,7 +46,6 @@ namespace WeChatAPI.Helpers
         /// <summary>
         /// 用户授权，获取code
         /// </summary>
-
         public const string GetCode = "https://open.weixin.qq.com/connect/oauth2/authorize?appid={0}&redirect_uri={1}&response_type={2}&scope={3}&state={4}#wechat_redirect";
 
         /// <summary>
@@ -68,9 +67,6 @@ namespace WeChatAPI.Helpers
         /// 检验授权凭证（access_token）是否有效
         /// </summary>
         public const string CheckCodeAccess_Token = "https://api.weixin.qq.com/sns/auth?access_token=ACCESS_TOKEN&openid=OPENID";
-
-
-
 
         #endregion
 

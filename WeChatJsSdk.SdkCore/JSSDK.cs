@@ -80,9 +80,6 @@ namespace WeChatJsSdk.SdkCore
                 {
                     token = jsonObj["access_token"].ToString();
                     this._cache.SetCache(CACHE_TOKEN_KEY, token.ToString(), 7000);
-
-                   
-
                 }
                 else
                 {
@@ -117,7 +114,6 @@ namespace WeChatJsSdk.SdkCore
                 {
                     ticket = jsonObj["ticket"].ToString();
                     this._cache.SetCache(CACHE_TICKET_KEY, ticket.ToString(), 7000);
-                  
                 }
                 else
                 {
